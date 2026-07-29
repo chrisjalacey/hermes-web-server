@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast, Brunch & Ice Cream — Bilbao Restaurant Guide</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #2d2d2d; max-width: 1000px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+        .badge-gf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-pescatarian { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .restaurant-card { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+        .restaurant-header { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .restaurant-name { font-size: 1.25rem; font-weight: 600; color: #1a1a2e; flex: 1; min-width: 200px; }
+        .restaurant-rating { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 6px 12px; font-weight: 600; color: #f5a623; display: flex; align-items: center; gap: 4px; }
+        .restaurant-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; font-size: 0.9rem; }
+        .meta-item { background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .meta-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .meta-value { color: #333; font-weight: 500; }
+        .dietary-badges { margin-bottom: 16px; }
+        .signature-dishes { background: #f0f7ff; border-left: 3px solid #0066cc; padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+        .signature-dishes strong { color: #1a1a2e; }
+        .practical-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.9rem; color: #555; }
+        .practical-item { background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .practical-label { color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } .restaurant-meta { grid-template-columns: 1fr; } .practical-info { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="../restaurants/index.html" class="back-link">← Back to Restaurant Guide</a>
+    <h1>☕ Breakfast, Brunch & Ice Cream</h1>
+    <p class="subtitle">GF-friendly morning spots and sweet treats</p>
+
+    <div class="section">
+        <div class="restaurant-card" id="la-huerta">
+            <div class="restaurant-header">
+                <span class="restaurant-name">LA HUERTA DE BILBAO</span>
+                <span class="restaurant-rating">⭐ 4.5 (1,200+ reviews)</span>
+            </div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">C/ Alameda de Mazarredo 65, Abando, Bilbao</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Healthy Breakfast/Brunch</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Mon–Fri 8:30–16:00; Sat 9:00–16:00; Sun closed</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins (queue at peak)</div></div>
+                <div class="meta-item"><div class="meta-label">Neighborhood</div><div class="meta-value">Abando/Indautxu</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Bright, healthy bowls, great coffee <span class="badge badge-local">Local Favorite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Friendly</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Acai bowls, avocado toast (GF bread available), eggs benedict, specialty coffee</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">GF bread available; staff knowledgeable; ask about cross-contamination</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Excellent — salmon, tuna, egg, veggie options</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="cafe-iruña">
+            <div class="restaurant-header">
+                <span class="restaurant-name">CAFÉ IRUÑA</span>
+                <span class="restaurant-rating">⭐ 4.3 (3,800+ reviews)</span>
+            </div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">C/ Berástegui 4, Abando, Bilbao</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Historic Café / Breakfast</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Daily 8:00–23:00</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Not needed (large venue)</div></div>
+                <div class="meta-item"><div class="meta-label">Neighborhood</div><div class="meta-value">Abando (near Moyúa)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Belle époque interior, historic landmark <span class="badge badge-tourist">Touristy</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">Limited GF</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Churros con chocolate, tortilla de patatas, café con leche</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Few GF options; cross-contamination likely</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Eggs, toast, fruit available</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="heladeria">
+            <div class="restaurant-header">
+                <span class="restaurant-name">HELADERÍA ARGENTINA / LOCAL GELATERIAS</span>
+                <span class="restaurant-rating">⭐ 4.5–4.7 (various)</span>
+            </div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Notable</div><div class="meta-value">Heladería Argentina (C/ Henao), Gela (Ensanche), La Mala Leche (Casco Viejo)</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Artisan Ice Cream / Gelato</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€–€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Typically 12:00–23:00 (seasonal)</div></div>
+                <div class="meta-item"><div class="meta-label">GF Options</div><div class="meta-value">Most flavors naturally GF; ask about cones/topping cross-contamination</div></div>
+                <div class="meta-item"><div class="meta-label">Neighborhood</div><div class="meta-value">Multiple locations</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Local favorites for afternoon treat <span class="badge badge-local">Local Favorite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Friendly (most flavors)</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature flavors:</strong> Turrón, queso con nueces, chocolate negro, fruit sorbets (naturally GF)</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Ask for GF cone or cup; most flavors gluten-free; sorbets safest</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">All flavors suitable</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📍 Summary</h2>
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead><tr style="background:#f5f5f5;"><th style="padding:12px;text-align:left;">Venue</th><th style="padding:12px;text-align:left;">Type</th><th style="padding:12px;text-align:left;">Neighborhood</th><th style="padding:12px;text-align:left;">GF Level</th><th style="padding:12px;text-align:left;">Pescatarian</th><th style="padding:12px;text-align:left;">Hours</th></tr></thead>
+            <tbody>
+                <tr><td>LA HUERTA</td><td>Healthy Brunch</td><td>Abando</td><td>GF Friendly</td><td>✓✓</td><td>Mon–Sat 8:30–16:00</td></tr>
+                <tr><td>CAFÉ IRUÑA</td><td>Historic Café</td><td>Abando</td><td>Limited GF</td><td>✓</td><td>Daily 8–23</td></tr>
+                <tr><td>LOCAL GELATERIAS</td><td>Ice Cream</td><td>Multiple</td><td>GF Friendly</td><td>✓✓</td><td>12–23 (seasonal)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer style="text-align:center;color:#888;font-size:0.9rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee;">
+        <p><a href="../restaurants/index.html" style="color:#0066cc;">← Back to Restaurant Guide</a> | <a href="../bilbao-guide.html" style="color:#0066cc;">Main Guide</a></p>
+    </footer>
+</body>
+</html>

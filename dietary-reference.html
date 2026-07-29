@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dietary Quick Reference — Bilbao & Basque Country</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #2d2d2d; max-width: 1200px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-right: 4px; margin-bottom: 4px; white-space: nowrap; }
+        .badge-gf-safe { background: #c8e6c9; color: #1b5e20; border: 1px solid #a5d6a7; }
+        .badge-gf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-gf-limited { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-pescatarian { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-pescatarian-good { background: #bbdefb; color: #0d47a1; border: 1px solid #90caf9; }
+        .badge-pescatarian-best { background: #64b5f6; color: #fff; border: 1px solid #42a5f5; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-tourist { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-michelin { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        
+        /* Filter controls */
+        .filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; padding: 16px; background: #f5f5f5; border-radius: 8px; }
+        .filter-group { display: flex; align-items: center; gap: 8px; }
+        .filter-group label { font-size: 0.85rem; font-weight: 600; color: #333; }
+        .filter-group select { padding: 6px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.85rem; background: #fff; }
+        
+        /* Table */
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+        th { background: #f5f5f5; font-weight: 600; color: #333; position: sticky; top: 0; z-index: 1; }
+        tr:hover { background: #fafafa; }
+        .hidden { display: none; }
+        .category-header { background: #e3f2fd !important; }
+        .category-header td { font-weight: 600; color: #1565c0; padding: 12px 8px; }
+        
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } .filter-bar { flex-direction: column; } table { font-size: 0.7rem; } th, td { padding: 8px 4px; } }
+    </style>
+</head>
+<body>
+    <a href="bilbao-guide.html" class="back-link">← Back to Main Guide</a>
+    <h1>🥗 Dietary Quick Reference Table</h1>
+    <p class="subtitle">Filterable table of all 40+ venues by gluten-free level and pescatarian suitability</p>
+
+    <div class="section">
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>GF Level:</label>
+                <select id="gfFilter">
+                    <option value="">All</option>
+                    <option value="dedicated">100% Dedicated / Celiac-Safe</option>
+                    <option value="friendly">GF Friendly / Marked Menu</option>
+                    <option value="aware">GF Aware / Natural Options</option>
+                    <option value="limited">Limited GF</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Pescatarian:</label>
+                <select id="pescaFilter">
+                    <option value="">All</option>
+                    <option value="best">✓✓✓ Specialist</option>
+                    <option value="good">✓✓ Excellent</option>
+                    <option value="ok">✓ Good</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Category:</label>
+                <select id="catFilter">
+                    <option value="">All</option>
+                    <option value="pintxos">Pintxos</option>
+                    <option value="traditional">Traditional/Asador</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="modern">Modern Basque/Michelin</option>
+                    <option value="asian">Asian/Fusion</option>
+                    <option value="italian">Italian/Intl GF</option>
+                    <option value="bakery">Bakery</option>
+                    <option value="breakfast">Breakfast/Brunch</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Neighborhood:</label>
+                <select id="hoodFilter">
+                    <option value="">All</option>
+                    <option value="casco">Casco Viejo</option>
+                    <option value="ensanche">Ensanche/Indautxu</option>
+                    <option value="abando">Abando/Abandoibarra</option>
+                    <option value="artxanda">Artxanda</option>
+                    <option value="martutene">Martutene</option>
+                    <option value="astigarraga">Astigarraga</option>
+                    <option value="deusto">Deusto</option>
+                    <option value="dima">Dima</option>
+                    <option value="larrabetzu">Larrabetzu</option>
+                    <option value="bermeo">Bermeo</option>
+                    <option value="multiple">Multiple</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <button onclick="clearFilters()" style="padding:6px 12px; background:#0066cc; color:#fff; border:none; border-radius:6px; cursor:pointer;">Clear All</button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="dietaryTable">
+                <thead>
+                    <tr>
+                        <th>Venue</th>
+                        <th>Category</th>
+                        <th>Neighborhood</th>
+                        <th>GF Level</th>
+                        <th>Pescatarian</th>
+                        <th>Rating</th>
+                        <th>Price</th>
+                        <th>Notable Dishes for Diet</th>
+                        <th>Reservation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- PINXTOS -->
+                    <tr class="category-header"><td colspan="9">🍢 PINXTOS BARS</td></tr>
+                    <tr data-gf="friendly" data-pesca="ok" data-cat="pintxos" data-hood="casco">
+                        <td><strong>AHOAN</strong></td>
+                        <td>Pintxos (Traditional)</td>
+                        <td>Casco Viejo</td>
+                        <td><span class="badge badge-gf">GF Friendly</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.6</td>
+                        <td>€€</td>
+                        <td>Pintxos sampler (made-to-order GF), Idiazabal cheese</td>
+                        <td>Walk-ins</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="pintxos" data-hood="casco">
+                        <td><strong>GURE TOKI</strong></td>
+                        <td>Pintxos (Modern)</td>
+                        <td>Casco Viejo</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€–€€€</td>
+                        <td>Creative fish/veg pintxos, txangurro</td>
+                        <td>Essential (AutoReserve)</td>
+                    </tr>
+                    <tr data-gf="limited" data-pesca="ok" data-cat="pintxos" data-hood="casco">
+                        <td><strong>CAFÉ BAR BILBAO</strong></td>
+                        <td>Pintxos (Classic)</td>
+                        <td>Casco Viejo</td>
+                        <td><span class="badge badge-gf-limited">Limited GF</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.4</td>
+                        <td>€€</td>
+                        <td>Gilda, tortilla, jamón (ask for GF bread)</td>
+                        <td>Walk-ins</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="pintxos" data-hood="casco">
+                        <td><strong>IRRINTZI</strong></td>
+                        <td>Pintxos (Seafood)</td>
+                        <td>Casco Viejo</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€</td>
+                        <td>Grilled fish pintxos, seafood salad</td>
+                        <td>Walk-ins</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="pintxos" data-hood="ensanche">
+                        <td><strong>LA VIÑA DEL ENSANCHE</strong></td>
+                        <td>Pintxos & Wine</td>
+                        <td>Ensanche/Indautxu</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.6</td>
+                        <td>€€–€€€</td>
+                        <td>Jamón, cheese, seasonal fish, mistela</td>
+                        <td>Recommended</td>
+                    </tr>
+
+                    <!-- TRADITIONAL -->
+                    <tr class="category-header"><td colspan="9">🥩 TRADITIONAL BASQUE / ASADORES / SIDRERÍAS</td></tr>
+                    <tr data-gf="aware" data-pesca="ok" data-cat="traditional" data-hood="artxanda">
+                        <td><strong>TXAKOLÍ SIMÓN</strong></td>
+                        <td>Asador / Grill</td>
+                        <td>Artxanda</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€€</td>
+                        <td>Txuleta, octopus, morcilla (grilled = GF)</td>
+                        <td>Recommended</td>
+                    </tr>
+                    <tr data-gf="limited" data-pesca="good" data-cat="traditional" data-hood="astigarraga">
+                        <td><strong>PETRITEGI</strong></td>
+                        <td>Sidrería (Modern)</td>
+                        <td>Astigarraga</td>
+                        <td><span class="badge badge-gf-limited">Limited GF</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.4</td>
+                        <td>€€</td>
+                        <td>Tortilla de bacalao, fried cod, Idiazabal</td>
+                        <td>Required</td>
+                    </tr>
+                    <tr data-gf="limited" data-pesca="ok" data-cat="traditional" data-hood="astigarraga">
+                        <td><strong>ZAPIAIN</strong></td>
+                        <td>Sidrería (Purist)</td>
+                        <td>Astigarraga</td>
+                        <td><span class="badge badge-gf-limited">Limited GF</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€</td>
+                        <td>Salt cod dishes, fixed menu</td>
+                        <td>Essential</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="ok" data-cat="traditional" data-hood="martutene">
+                        <td><strong>BARKAIZTEGI</strong></td>
+                        <td>Sidrería/Grill</td>
+                        <td>Martutene</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€€</td>
+                        <td>Txuleta, customizable courses</td>
+                        <td>Recommended</td>
+                    </tr>
+
+                    <!-- SEAFOOD -->
+                    <tr class="category-header"><td colspan="9">🐟 SEAFOOD & FISH-CENTRIC</td></tr>
+                    <tr data-gf="aware" data-pesca="best" data-cat="seafood" data-hood="deusto">
+                        <td><strong>ZARATE</strong> <span class="badge badge-michelin">⭐</span></td>
+                        <td>Seafood (Michelin)</td>
+                        <td>Deusto</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-best">✓✓✓</span></td>
+                        <td>⭐ 4.7</td>
+                        <td>€€€€</td>
+                        <td>11-course tasting (fish/veg adaptable)</td>
+                        <td>Essential (weeks ahead)</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="best" data-cat="seafood" data-hood="abando">
+                        <td><strong>KASKO</strong></td>
+                        <td>Seafood (Modern)</td>
+                        <td>Abandoibarra</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-best">✓✓✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€€</td>
+                        <td>Pescado a la plancha, kokotxas, mariscada</td>
+                        <td>Recommended</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="best" data-cat="seafood" data-hood="bermeo">
+                        <td><strong>BERMEO SPOTS</strong> (Kaia Kai, Boliño)</td>
+                        <td>Harbor Seafood</td>
+                        <td>Bermeo (day trip)</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-best">✓✓✓</span></td>
+                        <td>⭐ 4.4–4.6</td>
+                        <td>€€–€€€</td>
+                        <td>Grilled turbot, percebes, chipirones</td>
+                        <td>Recommended</td>
+                    </tr>
+
+                    <!-- MODERN BASQUE -->
+                    <tr class="category-header"><td colspan="9">⭐ MODERN BASQUE & MICHELIN</td></tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="modern" data-hood="dima">
+                        <td><strong>GARENA</strong> <span class="badge badge-michelin">⭐</span></td>
+                        <td>Modern (Farmhouse)</td>
+                        <td>Dima (Gorbea)</td>
+                        <td><span class="badge badge-gf">GF Adaptable</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.8</td>
+                        <td>€€€€</td>
+                        <td>16-course "Geroa" (hake, veg adaptable)</td>
+                        <td>Months ahead</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="modern" data-hood="larrabetzu">
+                        <td><strong>AZURMENDI</strong> <span class="badge badge-michelin">⭐⭐⭐</span></td>
+                        <td>Avant-garde</td>
+                        <td>Larrabetzu</td>
+                        <td><span class="badge badge-gf">GF Adaptable</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.8</td>
+                        <td>€€€€</td>
+                        <td>"Adarrak" tasting (heavy fish/veg)</td>
+                        <td>3+ months</td>
+                    </tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="modern" data-hood="ensanche">
+                        <td><strong>ETXANOBE</strong> <span class="badge badge-michelin">⭐</span></td>
+                        <td>Modern (Library)</td>
+                        <td>Ensanche (Azkuna)</td>
+                        <td><span class="badge badge-gf">GF Adaptable</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.7</td>
+                        <td>€€€€</td>
+                        <td>Seasonal tasting (adaptable)</td>
+                        <td>Essential</td>
+                    </tr>
+
+                    <!-- ASIAN -->
+                    <tr class="category-header"><td colspan="9">🍜 ASIAN & FUSION</td></tr>
+                    <tr data-gf="aware" data-pesca="good" data-cat="asian" data-hood="ensanche">
+                        <td><strong>KIMTXU</strong> <span class="badge badge-michelin">Guide</span></td>
+                        <td>Asian-Basque Fusion</td>
+                        <td>Ensanche/Indautxu</td>
+                        <td><span class="badge badge-gf">GF Aware</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.6</td>
+                        <td>€€</td>
+                        <td>Rice dishes, fish fusion (ask re: soy sauce)</td>
+                        <td>Recommended</td>
+                    </tr>
+
+                    <!-- ITALIAN GF -->
+                    <tr class="category-header"><td colspan="9">🍕 ITALIAN & INTERNATIONAL (DEDICATED GF)</td></tr>
+                    <tr data-gf="dedicated" data-pesca="ok" data-cat="italian" data-hood="ensanche">
+                        <td><strong>GROSSO NAPOLETANA</strong> <span class="badge badge-gf-safe">FACE</span></td>
+                        <td>Pizza (100% GF)</td>
+                        <td>Ensanche/Indautxu</td>
+                        <td><span class="badge badge-gf-safe">100% Dedicated GF</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.7</td>
+                        <td>€€</td>
+                        <td>All pizzas GF (anchovy, tuna, veg options)</td>
+                        <td>App/Website</td>
+                    </tr>
+                    <tr data-gf="dedicated" data-pesca="good" data-cat="italian" data-hood="multiple">
+                        <td><strong>BAUSK</strong> <span class="badge badge-gf-safe">Dedicated</span></td>
+                        <td>Healthy Bowls (100% GF)</td>
+                        <td>City Center</td>
+                        <td><span class="badge badge-gf-safe">100% Dedicated GF</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.6</td>
+                        <td>€€</td>
+                        <td>Salmon/tofu bowls (Korma, Tikka, Thai Curry)</td>
+                        <td>Walk-ins</td>
+                    </tr>
+
+                    <!-- BAKERIES -->
+                    <tr class="category-header"><td colspan="9">🥐 BAKERIES (100% GF)</td></tr>
+                    <tr data-gf="dedicated" data-pesca="" data-cat="bakery" data-hood="multiple">
+                        <td><strong>MAGORA BAKERY</strong> <span class="badge badge-gf-safe">Dedicated</span></td>
+                        <td>Bakery (100% GF)</td>
+                        <td>City Hall + Ribera Market</td>
+                        <td><span class="badge badge-gf-safe">100% Dedicated GF</span></td>
+                        <td>—</td>
+                        <td>⭐ 4.8</td>
+                        <td>€–€€</td>
+                        <td>Bollo de mantequilla, carolina, croissants, empanadas</td>
+                        <td>Not needed</td>
+                    </tr>
+                    <tr data-gf="dedicated" data-pesca="" data-cat="bakery" data-hood="multiple">
+                        <td><strong>KUKI COOKIE</strong> <span class="badge badge-gf-safe">Dedicated</span></td>
+                        <td>Cookies (100% GF)</td>
+                        <td>Gran Vía area</td>
+                        <td><span class="badge badge-gf-safe">100% Dedicated GF</span></td>
+                        <td>—</td>
+                        <td>⭐ 4.7</td>
+                        <td>€€</td>
+                        <td>Chocolate Dulce de Leche, Cardamom Pistachio</td>
+                        <td>Not needed</td>
+                    </tr>
+
+                    <!-- BREAKFAST -->
+                    <tr class="category-header"><td colspan="9">☕ BREAKFAST, BRUNCH & ICE CREAM</td></tr>
+                    <tr data-gf="friendly" data-pesca="good" data-cat="breakfast" data-hood="abando">
+                        <td><strong>LA HUERTA DE BILBAO</strong></td>
+                        <td>Healthy Brunch</td>
+                        <td>Abando</td>
+                        <td><span class="badge badge-gf">GF Friendly</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.5</td>
+                        <td>€€</td>
+                        <td>Acai bowls, avocado toast (GF bread), eggs</td>
+                        <td>Walk-ins</td>
+                    </tr>
+                    <tr data-gf="limited" data-pesca="ok" data-cat="breakfast" data-hood="abando">
+                        <td><strong>CAFÉ IRUÑA</strong></td>
+                        <td>Historic Café</td>
+                        <td>Abando</td>
+                        <td><span class="badge badge-gf-limited">Limited GF</span></td>
+                        <td><span class="badge badge-pescatarian">✓</span></td>
+                        <td>⭐ 4.3</td>
+                        <td>€€</td>
+                        <td>Churros (not GF), eggs, fruit</td>
+                        <td>Not needed</td>
+                    </tr>
+                    <tr data-gf="friendly" data-pesca="good" data-cat="breakfast" data-hood="multiple">
+                        <td><strong>LOCAL GELATERIAS</strong> (Argentina, Gela, La Mala Leche)</td>
+                        <td>Ice Cream</td>
+                        <td>Multiple</td>
+                        <td><span class="badge badge-gf">GF Friendly</span></td>
+                        <td><span class="badge badge-pescatarian-good">✓✓</span></td>
+                        <td>⭐ 4.5–4.7</td>
+                        <td>€–€€</td>
+                        <td>Most flavors GF; sorbets safest; ask for GF cone</td>
+                        <td>Not needed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🏷️ Badge Legend</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px;">
+            <span class="badge badge-gf-safe">100% Dedicated GF — Celiac safe, separate kitchen/fryer, FACE certified</span>
+            <span class="badge badge-gf">GF Friendly — Marked GF menu, staff knowledgeable, low cross-contamination</span>
+            <span class="badge badge-gf">GF Aware — Natural GF options, ask about fryer/sauces/cross-contamination</span>
+            <span class="badge badge-gf-limited">Limited GF — Few options, higher cross-contamination risk</span>
+            <span class="badge badge-pescatarian">✓ Pescatarian — Good fish/veg options</span>
+            <span class="badge badge-pescatarian-good">✓✓ Pescatarian — Excellent variety</span>
+            <span class="badge badge-pescatarian-best">✓✓✓ Pescatarian — Specialist/fully suitable</span>
+            <span class="badge badge-local">Local Favorite</span>
+            <span class="badge badge-tourist">Popular/Touristy</span>
+            <span class="badge badge-michelin">Michelin Star</span>
+            <span class="badge badge-michelin">Michelin Guide Selection</span>
+        </div>
+    </div>
+
+    <footer style="text-align:center;color:#888;font-size:0.9rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee;">
+        <p><a href="bilbao-guide.html" style="color:#0066cc;">← Back to Main Guide</a> | <a href="restaurants/index.html" style="color:#0066cc;">Restaurant Guide</a></p>
+    </footer>
+
+    <script>
+        function clearFilters() {
+            document.getElementById('gfFilter').value = '';
+            document.getElementById('pescaFilter').value = '';
+            document.getElementById('catFilter').value = '';
+            document.getElementById('hoodFilter').value = '';
+            filterTable();
+        }
+
+        function filterTable() {
+            const gf = document.getElementById('gfFilter').value;
+            const pesca = document.getElementById('pescaFilter').value;
+            const cat = document.getElementById('catFilter').value;
+            const hood = document.getElementById('hoodFilter').value;
+            
+            const rows = document.querySelectorAll('#dietaryTable tbody tr');
+            rows.forEach(row => {
+                if (row.classList.contains('category-header')) {
+                    // Check if any child rows in this category are visible
+                    let hasVisible = false;
+                    let nextRow = row.nextElementSibling;
+                    while (nextRow && !nextRow.classList.contains('category-header')) {
+                        if (!nextRow.classList.contains('hidden')) hasVisible = true;
+                        nextRow = nextRow.nextElementSibling;
+                    }
+                    row.style.display = hasVisible ? '' : 'none';
+                    return;
+                }
+                
+                const matchGf = !gf || row.dataset.gf === gf;
+                const matchPesca = !pesca || row.dataset.pesca === pesca;
+                const matchCat = !cat || row.dataset.cat === cat;
+                const matchHood = !hood || row.dataset.hood === hood;
+                
+                if (matchGf && matchPesca && matchCat && matchHood) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById('gfFilter').addEventListener('change', filterTable);
+        document.getElementById('pescaFilter').addEventListener('change', filterTable);
+        document.getElementById('catFilter').addEventListener('change', filterTable);
+        document.getElementById('hoodFilter').addEventListener('change', filterTable);
+    </script>
+</body>
+</html>

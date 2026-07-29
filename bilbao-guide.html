@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilbao & Basque Country — Authentic Non-Tourist Guide</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d2d2d;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            text-align: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 12px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+        }
+        .key-findings {
+            background: #fff8e6;
+            border-left: 4px solid #f5a623;
+        }
+        .key-findings ul { margin: 0; padding-left: 20px; }
+        .key-findings li { margin-bottom: 10px; }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .badge-gf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-gf-safe { background: #c8e6c9; color: #1b5e20; border: 1px solid #a5d6a7; }
+        .badge-pescatarian { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-tourist { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-michelin { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+
+        /* Navigation cards */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .nav-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            border-left: 4px solid #0066cc;
+        }
+        .nav-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            border-left-color: #0052a3;
+        }
+        .nav-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+            color: #1a1a2e;
+        }
+        .nav-card p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .nav-card .meta {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .nav-card .count {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Quick links */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .quick-link {
+            background: #f0f7ff;
+            border: 1px solid #d0e7ff;
+            color: #0066cc;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .quick-link:hover {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #f5a623;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .warning strong { color: #c64a00; }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 16px; }
+            h1 { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bilbao & Basque Country</h1>
+    <p class="subtitle">Authentic Non-Tourist Guide — Local Experiences, Hidden Gems & Dietary-Friendly Dining</p>
+
+    <!-- KEY FINDINGS -->
+    <section class="section key-findings">
+        <h2>🔑 Key Findings</h2>
+        <ul>
+            <li><strong>Aste Nagusia (Big Week)</strong> runs <strong>Aug 22–30, 2026</strong> — after your mid-August trip. No major Bilbao festivals during your stay.</li>
+            <li><strong>San Sebastián's Semana Grande</strong> runs <strong>Aug 8–15, 2026</strong>. <strong>Aug 15 is the final day</strong> with nightly fireworks over La Concha bay — perfect for a day trip.</li>
+            <li><strong>Aug 15</strong> is a Spanish national holiday (Assumption) — festive buzz; some shops closed, restaurants/festivals open.</li>
+            <li><strong>Gaztelugatxe</strong> requires a <strong>free timed-entry reservation</strong> in high season — <strong>sold out for mid-August</strong>. <strong>Alternative:</strong> <strong>Cabo Matxitxako</strong> headland (5 min drive) offers the iconic aerial view of the islet from the cliffs, zero reservation, fewer crowds, two historic lighthouses, and a stunning coastal loop.</li>
+            <li><strong>Pescatarian-friendly:</strong> Basque cuisine is exceptionally fish-forward (bacalao/hake, kokotxas, squid, anchovy) with great vegetable pintxos — no problem at any stop.</li>
+            <li><strong>Gluten-free:</strong> Bilbao has dedicated 100% GF venues (Grosso Napoletana, BAUSK, Magora, Kuki) plus many GF-aware spots. FACE (Spanish Celiac Association) certification is the gold standard.</li>
+        </ul>
+    </section>
+
+    <!-- MAIN NAVIGATION -->
+    <section class="section">
+        <h2>📚 Guide Sections</h2>
+        <p style="color:#666; margin-bottom:20px;">Click any section to explore detailed information with ratings, hours, dietary flags, and reservation info.</p>
+        
+        <div class="nav-grid">
+            <a href="restaurants/index.html" class="nav-card">
+                <h3>🍽️ Restaurant Guide</h3>
+                <p>Comprehensive dining guide organized by cuisine type with Google ratings, opening hours, gluten-free & pescatarian flags, reservation policies, and Michelin recognition.</p>
+                <div class="meta"><span class="count">10 categories</span> • <span class="count">40+ venues</span></div>
+            </a>
+            
+            <a href="neighborhoods.html" class="nav-card">
+                <h3>🗺️ Neighborhood Guide</h3>
+                <p>Authentic areas where locals actually live, eat, and hang out — beyond the tourist zones. Includes metro stops, vibe, and hidden gems.</p>
+                <div class="meta"><span class="count">7 neighborhoods</span></div>
+            </a>
+            
+            <a href="day-trips.html" class="nav-card">
+                <h3>🚌 Day Trips from Bilbao</h3>
+                <p>Non-touristy excursions to San Sebastián (local neighborhoods), Getaria, Hondarribia, Bermeo, Gernika, Rioja Alavesa, and natural parks.</p>
+                <div class="meta"><span class="count">8 itineraries</span> • <span class="count">Logistics included</span></div>
+            </a>
+            
+            <a href="culture.html" class="nav-card">
+                <h3>🎭 Cultural Experiences</h3>
+                <p>Sidrería txotx ritual, txakoli winery visits, workshops, live music venues, San Mamés tour, and current museum exhibitions locals care about.</p>
+                <div class="meta"><span class="count">6 experience types</span></div>
+            </a>
+            
+            <a href="dietary-reference.html" class="nav-card">
+                <h3>🥗 Dietary Quick Reference</h3>
+                <p>Searchable table filtering all venues by gluten-free level (celiac-safe, GF-friendly, aware) and pescatarian suitability with specific dish callouts.</p>
+                <div class="meta"><span class="count">Filterable table</span> • <span class="count">All venues</span></div>
+            </a>
+            
+            <a href="practical-tips.html" class="nav-card">
+                <h3>📋 August Practical Tips</h3>
+                <p>Weather, festival dates, accommodation booking windows, transport (Barik card, metro extensions), parking, reservations, and safety tips.</p>
+                <div class="meta"><span class="count">Festival calendar</span> • <span class="count">Booking timeline</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- TOP 10 QUICK LINKS -->
+    <section class="section">
+        <h2>🏆 Top 10 Must-Dos (Quick Links)</h2>
+        <div class="quick-links">
+            <a href="restaurants/sidrerias.html#petritegi" class="quick-link">Txotx at Petritegi</a>
+            <a href="restaurants/modern-basque.html#garena" class="quick-link">Garena (Dima)</a>
+            <a href="culture.html#txosna" class="quick-link">Txosna Culture</a>
+            <a href="day-trips.html#getaria" class="quick-link">Txomin Etxaniz Winery</a>
+            <a href="restaurants/bakeries.html#magora" class="quick-link">Magora Bakery GF</a>
+            <a href="restaurants/traditional.html#txakoli-simon" class="quick-link">Txakoli Simón</a>
+            <a href="restaurants/asian.html#kimtxu" class="quick-link">Kimtxu Fusion</a>
+            <a href="neighborhoods.html#getxo" class="quick-link">Metro to Getxo</a>
+            <a href="culture.html#basque-sports" class="quick-link">Basque Sports Demo</a>
+            <a href="practical-tips.html#aste-nagusia" class="quick-link">Aste Nagusia Tips</a>
+        </div>
+    </section>
+
+    <!-- DIETARY LEGEND -->
+    <section class="section">
+        <h2>🏷️ Dietary Badge Legend</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px;">
+            <span class="badge badge-gf-safe">100% Dedicated GF — Celiac safe, separate kitchen/fryer</span>
+            <span class="badge badge-gf">GF Friendly — Marked menu, staff knowledgeable</span>
+            <span class="badge badge-gf">GF Aware — Some natural GF options, ask about cross-contamination</span>
+            <span class="badge badge-gf">Limited GF — Few options, higher cross-contamination risk</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓ — Good fish/veg options</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓✓ — Excellent variety</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓✓✓ — Specialist/fully suitable</span>
+        </div>
+        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px;">
+            <span class="badge badge-local">Local Favorite</span>
+            <span class="badge badge-tourist">Popular/Touristy</span>
+            <span class="badge badge-michelin">Michelin Star</span>
+            <span class="badge badge-michelin">Michelin Guide Selection</span>
+        </div>
+    </section>
+
+    <footer style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <p>Research conducted via NotebookLM deep research (155+ sources) • Last updated: July 2026</p>
+        <p>Sources: Google Maps reviews, Michelin Guide, Repsol Guide, FACE Celiac Association, local Basque media, gastronomy blogs</p>
+    </footer>
+</body>
+</html>
