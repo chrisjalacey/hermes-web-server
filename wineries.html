@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wineries & Wine Experiences — Bilbao & Basque Country</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #2d2d2d; max-width: 1000px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2.2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #8b4513; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #333; margin-top: 32px; margin-bottom: 12px; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+        .badge-rioja { background: #fdeaea; color: #c62828; border: 1px solid #ef9a9a; }
+        .badge-txakoli-getaria { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-txakoli-bizkaia { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-experience { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-price { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-michelin { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+        
+        .winery-card { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #8b4513; }
+        .winery-header { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .winery-name { font-size: 1.25rem; font-weight: 600; color: #1a1a2e; flex: 1; min-width: 200px; }
+        .winery-rating { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 6px 12px; font-weight: 600; color: #f5a623; display: flex; align-items: center; gap: 4px; }
+        .winery-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; font-size: 0.9rem; }
+        .meta-item { background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .meta-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .meta-value { color: #333; font-weight: 500; }
+        .dietary-badges { margin-bottom: 16px; }
+        .experience-list { background: #f0f7ff; border-left: 3px solid #0066cc; padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+        .experience-list strong { color: #1a1a2e; }
+        .experience-list ul { margin: 8px 0 0 20px; padding: 0; }
+        .experience-list li { margin-bottom: 6px; }
+        .practical-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-size: 0.85rem; color: #555; }
+        .practical-item { background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #eee; }
+        .practical-label { color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        
+        .experience-type-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 20px; margin-bottom: 16px; border-left: 4px solid #e65100; }
+        .experience-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+        .experience-title { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; }
+        .experience-price { background: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 16px; font-size: 0.85rem; font-weight: 600; }
+        .experience-provider { color: #666; margin-bottom: 8px; }
+        .experience-details { font-size: 0.9rem; color: #444; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.85rem; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+        th { background: #f5f5f5; font-weight: 600; color: #333; }
+        tr:hover { background: #fafafa; }
+        
+        .tip-list { padding-left: 0; list-style: none; }
+        .tip-list li { position: relative; padding-left: 24px; margin-bottom: 10px; background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 14px 16px 14px 40px; }
+        .tip-list li::before { content: "✓"; position: absolute; left: 14px; color: #8b4513; font-weight: bold; }
+        
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        
+        .warning { background: #fff3e0; border-left: 4px solid #f5a623; padding: 16px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .warning strong { color: #c64a00; }
+        
+        .note { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; }
+        
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } .winery-meta { grid-template-columns: 1fr; } .practical-info { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="bilbao-guide.html" class="back-link">← Back to Main Guide</a>
+    <h1>🍷 Wineries & Wine Experiences</h1>
+    <p class="subtitle">Rioja Alavesa, Getariako Txakolina, Bizkaiko Txakolina — Tours, Tastings, Unique Activities & Practical Logistics</p>
+
+    <!-- KEY INSIGHTS -->
+    <section class="section" style="background: #fdf6e3; border-left: 4px solid #8b4513;">
+        <h2>🔑 Key Insights for Wine Travelers</h2>
+        <ul>
+            <li><strong>Three distinct zones:</strong> <span class="badge badge-rioja">Rioja Alavesa</span> (Tempranillo reds, 45-60 min), <span class="badge badge-txakoli-getaria">Getariako Txakolina</span> (saline whites on cliffs, 35-45 min), <span class="badge badge-txakoli-bizkaia">Bizkaiko Txakolina</span> (mountain whites, 20-40 min).</li>
+            <li><strong>August = Aste Nagusia (Aug 22–30):</strong> Book wineries 4-6 weeks ahead for architectural icons (Ysios, Riscal). Prices surge 40-60%.</li>
+            <li><strong>Beyond tastings:</strong> E-bike vineyard trails (€90), hot air balloon (sunrise), horseback riding (€220-390), vinotherapy spa, custom blending workshops, harvest participation (late Aug), vineyard picnics, stargazing, concerts in cellars.</li>
+            <li><strong>Dietary-friendly:</strong> Most high-end wineries accommodate GF, pescatarian, vegan with 48h notice. Standard tastings serve wheat bread — request rice cakes/GF crackers when booking.</li>
+            <li><strong>Transport:</strong> L17 bus to Laguardia (€7-13, 1h42m) avoids breathalyzer checkpoints. Chauffeur €750-1,350/day. Taxi to Getaria €120-140, to Laguardia €160-190.</li>
+        </ul>
+    </section>
+
+    <!-- RIOJA ALAVESA -->
+    <section class="section">
+        <h2><span class="badge badge-rioja">Rioja Alavesa</span> Rioja Alavesa Wineries — Tempranillo Country</h2>
+        <p style="color:#666; margin-bottom:20px;">High-altitude clay-limestone soils, Sierra de Cantabria protection. 45-60 min from Bilbao. Medieval villages (Laguardia, Elciego, Samaniego) with 15th-century underground cellars + starchitect landmarks.</p>
+
+        <div class="winery-card" id="marques-riscal">
+            <div class="winery-header">
+                <span class="winery-name">MARQUÉS DE RISCAL</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-michelin">Architecture Icon</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Calle Torrea 1, Elciego (42.5117° N, 2.6179° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Daily 10:00–19:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, FR, DE</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">4-6 weeks (August)</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+                <span class="badge">Vegan on Request</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices (per person):</strong>
+                <ul>
+                    <li><strong>Standard Tour + Tasting:</strong> €30-31 (1.5h) — entry-level</li>
+                    <li><strong>Special Tasting:</strong> €45 — reserve/gran reserva focus</li>
+                    <li><strong>Organic Tasting:</strong> €40 — biodynamic/organic range</li>
+                    <li><strong>Vinotherapy Spa (Caudalie):</strong> Barrel baths, Cabernet scrubs, wine-wrap treatments — sessions vary, book via <a href="https://www.marquesderiscal.com" target="_blank" style="color:#0066cc;">marquesderiscal.com</a></li>
+                    <li><strong>Gastronomic Lunch:</strong> 6-course pairing at Marqués de Riscal 1860 restaurant — €110+ pp</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Frank Gehry titanium ribbons; Hotel Marqués de Riscal (luxury stay on-site)</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="https://www.marquesderiscal.com/en/visit-us/" target="_blank" style="color:#0066cc;">marquesderiscal.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Transport</div><div class="practical-value">L17 bus to Laguardia + 10 min taxi; Taxi from Bilbao €160-190</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="ysios">
+            <div class="winery-header">
+                <span class="winery-name">YSÍOS</span>
+                <span class="winery-rating">⭐ 4.5/5.0 <span class="badge badge-michelin">Architecture Icon</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Camino de La Hoya, Laguardia (42.5671° N, 2.5694° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Daily 10:00–16:30</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">3-4 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Architectural Walk + Tasting:</strong> €100 — Calatrava's wave architecture focus</li>
+                    <li><strong>Vineyard Walk + Tasting:</strong> €50 — terroir-focused, includes vineyard tour</li>
+                    <li><strong>Masterclass:</strong> €250 — deep-dive technical tasting, limited groups</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Santiago Calatrava wave-like structure; gravity-flow design</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="https://visits.bodegasysios.com" target="_blank" style="color:#0066cc;">visits.bodegasysios.com</a></div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="baigorri">
+            <div class="winery-header">
+                <span class="winery-name">BODEGAS BAIGORRI</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-local">Local Favorite</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Ctra. Vitoria-Logroño km 53, Samaniego (42.5624° N, 2.6789° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Tue-Sat 10:00–18:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, FR, DE</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">2-3 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+                <span class="badge">Family-Friendly</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Classic Tour + Tasting:</strong> €25 (1.5h) — 7-story gravity-flow facility</li>
+                    <li><strong>Premium Tasting:</strong> €35 — reserve/gran reserva selection</li>
+                    <li><strong>Gastronomic Lunch:</strong> €110 (3h) — 6-course pairing in restaurant with vineyard views</li>
+                    <li><strong>Family-Friendly:</strong> Junior juice tastings for kids (grape juice "tasting")</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">7-story subterranean gravity-fed winery; architectural marvel</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="https://www.bodegasbaigorri.com/en/visit-us/" target="_blank" style="color:#0066cc;">bodegasbaigorri.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Accessibility</div><div class="practical-value">Elevator access through 7 levels; parking on-site</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="el-fabulista">
+            <div class="winery-header">
+                <span class="winery-name">BODEGA EL FABULISTA</span>
+                <span class="winery-rating">⭐ 4.4/5.0 <span class="badge badge-local">Most Authentic</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Plaza San Juan, Laguardia (42.5543° N, 2.5614° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Daily 11:00–19:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Cave Tour + Tasting:</strong> €12.50 (1.5h) — 15th-century underground cellars beneath Laguardia village</li>
+                    <li><strong>Theatrical Experience:</strong> €20 (1.5h) — costumed guide, storytelling, immersive history</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Subterranean cellar beneath medieval village; most affordable quality experience</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="https://turismovasco.com/en/arava/bodega-el-fabulista-the-subway-winery-of-laguardia/" target="_blank" style="color:#0066cc;">turismovasco.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Location</div><div class="practical-value">Right in Laguardia center — walkable from L17 bus stop</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="artadi">
+            <div class="winery-header">
+                <span class="winery-name">ARTADI</span>
+                <span class="winery-rating">⭐ 4.8/5.0 <span class="badge badge-local">Biodynamic Pioneer</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Ctra. de Logroño, Laguardia (42.5590° N, 2.5630° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Fri 9:00–15:00 <strong style="color:#c62828;">CLOSED WEEKENDS</strong></div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">3-4 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+                <span class="badge">Biodynamic</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Terroir Parcel Walk + Tasting:</strong> €25-50 (2h) — single-vineyard focus, biodynamic philosophy</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Single-vineyard biodynamic pioneer; no weekend hours</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Email/portal — 3-4 weeks ahead</div></div>
+                <div class="practical-item"><div class="practical-label">Critical</div><div class="practical-value"><strong>Mon-Fri only, closes 15:00</strong> — plan morning visit</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="remelluri">
+            <div class="winery-header">
+                <span class="winery-name">REMELLURI</span>
+                <span class="winery-rating">⭐ 4.7/5.0 <span class="badge badge-local">Historic Estate</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Ctra. Rivas de Teresu, Labastida (42.5932° N, 2.6984° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Sat 10:00–17:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">2-3 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Historical Walk + Tasting:</strong> €35 (2h) — oldest single-estate winery in Rioja</li>
+                    <li><strong>Vertical Tasting:</strong> €60 (2h) — multiple vintages of same wine</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Oldest single-estate winery in Rioja; stunning estate grounds</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Web/Email — 2-3 weeks ahead</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="lan">
+            <div class="winery-header">
+                <span class="winery-name">BODEGAS LAN</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-local">Unique Geography</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Paraje de Lanciano, Fuenmayor (42.4932° N, 2.5641° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Sat 10:00–18:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Meander Tour:</strong> €30 — vineyard inside Ebro River loop</li>
+                    <li><strong>Premium Barrel Tasting:</strong> €45 (1.5h) — direct from barrel</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Vineyard located inside a loop of the Ebro River (meander)</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Web — 1-2 weeks ahead</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="cvne">
+            <div class="winery-header">
+                <span class="winery-name">CVNE / VIÑA REAL</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-local">Historic + Architecture</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Ctra. Logroño-Laguardia km 4.8, Laguardia (42.5482° N, 2.5312° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Sat 10:00–18:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Imperial Tour:</strong> €25 — historic 19th-century winery</li>
+                    <li><strong>Century Tasting:</strong> €40 (1.5h) — historic vintages</li>
+                    <li><strong>Mazières Architecture:</strong> Hillside vat structure by French engineer Mazières</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Massive hillside vat structure by Mazières; 140+ years history</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Web — 1-2 weeks</div></div>
+            </div>
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <h3>📋 Rioja Alavesa Quick Comparison</h3>
+        <table>
+            <thead><tr><th>Winery</th><th>Location</th><th>Hours (Aug)</th><th>Entry Price</th><th>Premium Price</th><th>Lead Time</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td>Marqués de Riscal</td><td>Elciego</td><td>Daily 10-19</td><td>€30</td><td>€45/€110 lunch</td><td>4-6 wks</td><td>Architecture, vinotherapy, luxury stay</td></tr>
+                <tr><td>Ysios</td><td>Laguardia</td><td>Daily 10-16:30</td><td>€50</td><td>€100/€250</td><td>3-4 wks</td><td>Calatrava architecture, masterclass</td></tr>
+                <tr><td>Baigorri</td><td>Samaniego</td><td>Tue-Sat 10-18</td><td>€25</td><td>€35/€110 lunch</td><td>2-3 wks</td><td>Gravity flow, family-friendly, lunch</td></tr>
+                <tr><td>El Fabulista</td><td>Laguardia</td><td>Daily 11-19</td><td>€12.50</td><td>€20 theatrical</td><td>1-2 wks</td><td>Budget, authentic caves, walkable</td></tr>
+                <tr><td>Artadi</td><td>Laguardia</td><td>Mon-Fri 9-15</td><td>€25</td><td>€50</td><td>3-4 wks</td><td>Biodynamic, single vineyard</td></tr>
+                <tr><td>Remelluri</td><td>Labastida</td><td>Mon-Sat 10-17</td><td>€35</td><td>€60 vertical</td><td>2-3 wks</td><td>Historic estate, vertical tasting</td></tr>
+                <tr><td>LAN</td><td>Fuenmayor</td><td>Mon-Sat 10-18</td><td>€30</td><td>€45 barrel</td><td>1-2 wks</td><td>Ebro River loop geography</td></tr>
+                <tr><td>CVNE/Viña Real</td><td>Laguardia</td><td>Mon-Sat 10-18</td><td>€25</td><td>€40 century</td><td>1-2 wks</td><td>Historic + Mazières architecture</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- GETARIKO TXAKOLINA -->
+    <section class="section">
+        <h2><span class="badge badge-txakoli-getaria">Getariako Txakolina</span> Getariako Txakolina — Coastal Cliff Vineyards</h2>
+        <p style="color:#666; margin-bottom:20px;">Steep coastal cliffs, <em>parral</em> overhead pergola system, saline effervescent whites from Hondarrabi Zuri. 35-45 min from Bilbao. Traditional pairing: Cantabrian anchovies, white tuna, Idiazabal cheese.</p>
+
+        <div class="winery-card" id="txomin-etxaniz">
+            <div class="winery-header">
+                <span class="winery-name">TXOMIN ETXANIZ</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-local">Oldest (1649)</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Barrio Eitzaga 12, Getaria (43.2982° N, 2.2231° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Fri 9:00–17:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Ocean Terroir Walk:</strong> €25 (1.5h) — cliff vineyards, parral system, tasting with Cantabrian anchovies & white tuna</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Oldest continuously operating Txakoli house (since 1649)</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://txominetxaniz.com" target="_blank" style="color:#0066cc;">txominetxaniz.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Food Pairing</div><div class="practical-value">Cantabrian anchovies, white tuna, Idiazabal cheese</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="ameztoi">
+            <div class="winery-header">
+                <span class="winery-name">AMEZTOI</span>
+                <span class="winery-rating">⭐ 4.7/5.0 <span class="badge badge-local">Cliff Vineyards</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Barrio Eitzaga 10, Getaria (43.2985° N, 2.2210° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Sat 10:00–17:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>White Tasting:</strong> €24 (1.5h) — standard</li>
+                    <li><strong>White Experience:</strong> €32 (1.5h) — extended tasting, premium cuvées</li>
+                    <li>Pairing: Getaria anchovies, tuna, Idiazabal cheese</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Vineyards on cliffs dropping straight to the Cantabrian Sea</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://txakoliameztoi.com" target="_blank" style="color:#0066cc;">txakoliameztoi.com</a></div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="gaintza">
+            <div class="winery-header">
+                <span class="winery-name">GAINTZA</span>
+                <span class="winery-rating">⭐ 4.8/5.0 <span class="badge badge-local">Hotel + Vineyard</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Barrio Akerregi 105, Getaria (43.3015° N, 2.2131° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Sun 9:00–20:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Estate Walk:</strong> €22 (1.5h) — vineyard tour + tasting</li>
+                    <li><strong>Private Agritourism:</strong> €35 — personalized experience</li>
+                    <li><strong>Vineyard Picnic:</strong> Insulated backpack with Txakoli & local seafood for private sea-view dining</li>
+                    <li><strong>Stay:</strong> High-end country hotel integrated into vineyard</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Hotel + vineyard combo; picnic backpacks for sea-view dining</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://gaintza.com" target="_blank" style="color:#0066cc;">gaintza.com</a></div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="talai-berri">
+            <div class="winery-header">
+                <span class="winery-name">TALAI BERRI</span>
+                <span class="winery-rating">⭐ 4.7/5.0 <span class="badge badge-local">Sister-Run</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Talai Mendi Auzoa 24, Zarautz (43.2912° N, 2.1584° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Fri-Sat 11:00–14:00 <strong style="color:#c62828;">LIMITED</strong></div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Sister's Tour:</strong> €20 — 5th-gen estate managed by sisters</li>
+                    <li><strong>Family Tour:</strong> €20 — personal, intimate experience</li>
+                    <li><strong>Stargazing/Picnics:</strong> €20-35 — evening events</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">5th-gen, sister-run; Fri-Sat only; stargazing events</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://talaiberri.com" target="_blank" style="color:#0066cc;">talaiberri.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Critical</div><div class="practical-value"><strong>Fri-Sat 11-14 only</strong> — very limited hours</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="hiruzta">
+            <div class="winery-header">
+                <span class="winery-name">HIRUZTA</span>
+                <span class="winery-rating">⭐ 4.7/5.0 <span class="badge badge-local">Mt. Jaizkibel</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Bº Jaizubia 266, Hondarribia (43.3541° N, 1.8152° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Wed-Sun (hours vary)</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU, FR</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1 week</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Standard Basque Tour:</strong> €19-23 — traditional txakoli tasting</li>
+                    <li><strong>Lees-Aging Masterclass:</strong> €35 — technical deep-dive</li>
+                    <li>Pairing: Cod croquetas, gildas (anchovy/olive/pepper skewers)</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Base of Mt. Jaizkibel; lees-aging specialist; 4 languages</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://hiruzta.com" target="_blank" style="color:#0066cc;">hiruzta.com</a></div></div>
+            </div>
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <h3>📋 Getariako Txakolina Quick Comparison</h3>
+        <table>
+            <thead><tr><th>Winery</th><th>Location</th><th>Hours (Aug)</th><th>Price</th><th>Specialty</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td>Txomin Etxaniz</td><td>Getaria</td><td>Mon-Fri 9-17</td><td>€25</td><td>Oldest (1649)</td><td>History + anchovies</td></tr>
+                <tr><td>Ameztoi</td><td>Getaria</td><td>Mon-Sat 10-17</td><td>€24-32</td><td>Cliff vineyards</td><td>Dramatic views</td></tr>
+                <tr><td>Gaintza</td><td>Getaria</td><td>Daily 9-20</td><td>€22-35</td><td>Hotel + picnic</td><td>Stay + sea views</td></tr>
+                <tr><td>Talai Berri</td><td>Zarautz</td><td>Fri-Sat 11-14</td><td>€20</td><td>Sister-run</td><td>Intimate, stargazing</td></tr>
+                <tr><td>Hiruzta</td><td>Hondarribia</td><td>Wed-Sun varies</td><td>€19-35</td><td>Lees-aging</td><td>Technical, Mt. Jaizkibel</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- BIZKAIKO TXAKOLINA -->
+    <section class="section">
+        <h2><span class="badge badge-txakoli-bizkaia">Bizkaiko Txakolina</span> Bizkaiko Txakolina — Near Bilbao Mountain Vineyards</h2>
+        <p style="color:#666; margin-bottom:20px;">Rugged mountain valleys, lees aging, barrel fermentation. 20-40 min from Bilbao. Complex mineral-driven Atlantic whites.</p>
+
+        <div class="winery-card" id="gorka-izagirre">
+            <div class="winery-header">
+                <span class="winery-name">GORKA IZAGIRRE</span>
+                <span class="winery-rating">⭐ 4.8/5.0 <span class="badge badge-michelin">Azurmendi Aligned</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Barrio Legina, Larrabetzu (43.2642° N, 2.7884° W) — 20 min from Bilbao</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Fri 8:00–15:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">2-3 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Technical Tour:</strong> €30 (1.5-2h) — enological focus, aligned with Azurmendi (3★ Michelin)</li>
+                    <li><strong>Prêt-à-Porter Tasting Menu:</strong> €50 — paired with Iberico ham, farm tomatoes</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Enological alignment with 3★ Azurmendi; technical precision</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Email/Phone — 2-3 weeks</div></div>
+                <div class="practical-item"><div class="practical-label">Critical</div><div class="practical-value"><strong>Mon-Fri only, closes 15:00</strong></div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="txakoli-simon">
+            <div class="winery-header">
+                <span class="winery-name">TXAKOLÍ SIMÓN (ASADOR + WINERY)</span>
+                <span class="winery-rating">⭐ 4.5/5.0 <span class="badge badge-local">Grill + Wine</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">San Roque Bidea 89, Bilbao/Artxanda (43.2842° N, 2.9212° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Wed-Sun (Lunch/Dinner)</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Aware</span>
+                <span class="badge">Pescatarian ✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Grill Tasting Menu + Wine:</strong> €55-60 (2h) — wood-fired txuleta (T-bone), octopus, morcilla</li>
+                    <li>USP: Famous asador-winery overlooking Bilbao from Mt. Artxanda</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Grill + winery combo; panoramic Bilbao views; funicular access</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Phone — 1-2 weeks</div></div>
+                <div class="practical-item"><div class="practical-label">Transport</div><div class="practical-value">Funicular from Zazpi Kaleak (Artxanda station)</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="itsasmendi">
+            <div class="winery-header">
+                <span class="winery-name">ITSASMENDI</span>
+                <span class="winery-rating">⭐ 4.7/5.0 <span class="badge badge-local">Urdaibai Biosphere</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Barrio Gernika-Lumo, Gernika (43.3152° N, 2.6791° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Mon-Fri 9:00–17:00</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Geology & Soil Tour:</strong> €25 (1.5h) — unique terroir focus</li>
+                    <li><strong>Biodiverse Parcel Tour:</strong> €35 (1.5h) — biodiversity focus in Urdaibai</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">Vineyards inside Urdaibai Biosphere Reserve; geology/biodiversity tours</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value">Web — 1-2 weeks</div></div>
+                <div class="practical-item"><div class="practical-label">Combine With</div><div class="practical-value">Gernika Monday market, Urdaibai birdwatching</div></div>
+            </div>
+        </div>
+
+        <div class="winery-card" id="doniene-gorrondona">
+            <div class="winery-header">
+                <span class="winery-name">DONIENE GORRONDONA</span>
+                <span class="winery-rating">⭐ 4.6/5.0 <span class="badge badge-local">15th Century + Distillery</span></span>
+            </div>
+            <div class="winery-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Gibelorratzaga Auzoa 1, Bakio (43.4241° N, 2.8023° W)</div></div>
+                <div class="meta-item"><div class="meta-label">August Hours</div><div class="meta-value">Wed/Sat (specific slots)</div></div>
+                <div class="meta-item"><div class="meta-label">Languages</div><div class="meta-value">EN, ES, EU, FR</div></div>
+                <div class="meta-item"><div class="meta-label">Booking Lead</div><div class="meta-value">1-2 weeks</div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge">GF Adaptable</span>
+                <span class="badge">Pescatarian ✓✓</span>
+                <span class="badge">Harvest Participation</span>
+            </div>
+            <div class="experience-list">
+                <strong>Experiences & Prices:</strong>
+                <ul>
+                    <li><strong>Kaixo Tour:</strong> €18 — introductory</li>
+                    <li><strong>Bizi Premium:</strong> €30.50 — extended</li>
+                    <li><strong>Danak Century:</strong> €42.50 — premium, 15th-century caserío + copper alembic still</li>
+                    <li><strong>Harvest Participation (Vendimia):</strong> Late Aug/Sept — pick grapes, measure brix, seasonal</li>
+                </ul>
+            </div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">USP</div><div class="practical-value">15th-century caserío with in-house copper alembic still; harvest participation</div></div>
+                <div class="practical-item"><div class="practical-label">Book</div><div class="practical-value"><a href="http://donienegorrondona.com" target="_blank" style="color:#0066cc;">donienegorrondona.com</a></div></div>
+                <div class="practical-item"><div class="practical-label">Critical</div><div class="practical-value"><strong>Wed/Sat specific slots only</strong> — check calendar</div></div>
+            </div>
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <h3>📋 Bizkaiko Txakolina Quick Comparison</h3>
+        <table>
+            <thead><tr><th>Winery</th><th>Location</th><th>Hours (Aug)</th><th>Price Range</th><th>Specialty</th><th>Best For</th></tr></thead>
+            <tbody>
+                <tr><td>Gorka Izagirre</td><td>Larrabetzu (20 min)</td><td>Mon-Fri 8-15</td><td>€30-50</td><td>Michelin-aligned</td><td>Technical, Azurmendi link</td></tr>
+                <tr><td>Txakoli Simón</td><td>Artxanda, Bilbao</td><td>Wed-Sun L/D</td><td>€55-60</td><td>Grill + wine</td><td>Txuleta + views</td></tr>
+                <tr><td>Itsasmendi</td><td>Gernika (35 min)</td><td>Mon-Fri 9-17</td><td>€25-35</td><td>Urdaibai Biosphere</td><td>Nature + geology tours</td></tr>
+                <tr><td>Doniene Gorrondona</td><td>Bakio (30 min)</td><td>Wed/Sat slots</td><td>€18-42.50</td><td>Caserío + still + harvest</td><td>History + vendimia</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- UNIQUE EXPERIENCES BY TYPE -->
+    <section class="section">
+        <h2><span class="badge badge-experience">Unique Experiences</span> Unique Wine Experiences by Type</h2>
+        <p style="color:#666; margin-bottom:20px;">Find all wineries offering a specific experience type. Prices per person. Book early for August.</p>
+
+        <div class="experience-type-card" id="ebike">
+            <div class="experience-header">
+                <span class="experience-title">🚲 E-Bike Vineyard Tours</span>
+                <span class="experience-price">€90</span>
+            </div>
+            <div class="experience-provider"><strong>Provider:</strong> Bodegas Muga (Haro, Rioja Alta) — 1h from Bilbao</div>
+            <div class="experience-details">Guided e-bike trails through old vines with picnic included. Explore the vineyard landscape actively. <a href="http://bodegasmuga.com" target="_blank" style="color:#0066cc;">bodegasmuga.com</a> | Also check <strong>Rioja Like a Native</strong> for custom e-bike wine tours.</div>
+        </div>
+
+        <div class="experience-type-card" id="horseback">
+            <div class="experience-header">
+                <span class="experience-title">🐎 Horseback Riding Through Vines</span>
+                <span class="experience-price">€220–390</span>
+            </div>
+            <div class="experience-provider"><strong>Provider:</strong> Rioja Like a Native (Rioja Alavesa)</div>
+            <div class="experience-details">Guided horseback journeys through clay-limestone slopes, often including winery visits and country lunches. Half-day to full-day. <a href="http://riojalikeanative.com" target="_blank" style="color:#0066cc;">riojalikeanative.com</a></div>
+        </div>
+
+        <div class="experience-type-card" id="balloon">
+            <div class="experience-header">
+                <span class="experience-title">🎈 Hot Air Balloon Over Rioja</span>
+                <span class="experience-price">Inquire</span>
+            </div>
+            <div class="experience-provider"><strong>Provider:</strong> North Coast Tours / Regional operators (Laguardia base)</div>
+            <div class="experience-details">Dawn flights over Ebro River, Laguardia medieval town, vineyard patchwork. Includes hot breakfast and sparkling wine toast. Book via <strong>North Coast Tours</strong> (also offer chauffeur service).</div>
+        </div>
+
+        <div class="experience-type-card" id="vinotherapy">
+            <div class="experience-header">
+                <span class="experience-title">🧖 Vinotherapy / Wine Spa</span>
+                <span class="experience-price">Varies</span>
+            </div>
+            <div class="experience-provider"><strong>Provider:</strong> Marqués de Riscal — Spa Vinothérapie Caudalie (Elciego)</div>
+            <div class="experience-details">Barrel-bath hydrotherapy, Cabernet scrubs, wine wraps, merlot massages. Luxury spa within Frank Gehry hotel complex. Sessions vary. <a href="https://www.marquesderiscal.com" target="_blank" style="color:#0066cc;">marquesderiscal.com</a></div>
+        </div>
+
+        <div class="experience-type-card" id="blending">
+            <div class="experience-header">
+                <span class="experience-title">🧪 Custom Wine Blending Workshop</span>
+                <span class="experience-price">Masterclass format</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Boutique Alavesa Estates (Artadi, Remelluri, Baigorri), Ysios (€250 masterclass)</div>
+            <div class="experience-details">Create and bottle your own blend under winemaker guidance. Take home your personalized wine. Masterclass format, limited groups. Contact wineries directly via their portals.</div>
+        </div>
+
+        <div class="experience-type-card" id="harvest">
+            <div class="experience-header">
+                <span class="experience-title">🍇 Harvest Participation (Vendimia)</span>
+                <span class="experience-price">Seasonal (Late Aug–Sept)</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Doniene Gorrondona (Bakio), select Alavesa estates</div>
+            <div class="experience-details">Join the vendimia: hand-pick grapes, measure brix (sugar), learn harvest logistics. Late August through September. Seasonal, limited spots. <a href="http://donienegorrondona.com" target="_blank" style="color:#0066cc;">donienegorrondona.com</a> for Bakio; inquire at Alavesa estates.</div>
+        </div>
+
+        <div class="experience-type-card" id="sunset">
+            <div class="experience-header">
+                <span class="experience-title">🌅 Sunset / Sunrise Tastings</span>
+                <span class="experience-price">€30-60</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Gaintza, Talai Berri, Ameztoi (cliff vineyards)</div>
+            <div class="experience-details">Evening tastings on cliff terraces or sea-view patios. Gaintza and Talai Berri offer stargazing/picnic combos (€20-35). Check winery websites for summer schedules.</div>
+        </div>
+
+        <div class="experience-type-card" id="picnic">
+            <div class="experience-header">
+                <span class="experience-title">🧺 Vineyard Picnics</span>
+                <span class="experience-price">€20-35</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Gaintza (sea-view), Talai Berri, Gorka Izagirre</div>
+            <div class="experience-details">Insulated backpacks with Txakoli/local wine, seafood, cheese, bread. Gaintza: sea-view dining on cliffs. Talai Berri: stargazing combo. Gorka Izagirre: mountain valley setting.</div>
+        </div>
+
+        <div class="experience-type-card" id="concerts">
+            <div class="experience-header">
+                <span class="experience-title">🎵 Concerts / Music in Cellars</span>
+                <span class="experience-price">Varies</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Laguardia Underground cellars, seasonal summer events</div>
+            <div class="experience-details">Thematic concerts in historic underground cellars. Check <a href="http://rutadelvinoderiojaalavesa.com" target="_blank" style="color:#0066cc;">rutadelvinoderiojaalavesa.com</a> for summer schedule.</div>
+        </div>
+
+        <div class="experience-type-card" id="family">
+            <div class="experience-header">
+                <span class="experience-title">👨‍👩‍👧‍👦 Family-Friendly Activities</span>
+                <span class="experience-price">Included</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Bodegas Baigorri (juice tastings), Gaintza (easy walks)</div>
+            <div class="experience-details">Junior grape juice "tastings" for kids, easy vineyard walks, grape juice pressing demos. <a href="https://www.bodegasbaigorri.com/en/visit-us/" target="_blank" style="color:#0066cc;">bodegasbaigorri.com</a></div>
+        </div>
+
+        <div class="experience-type-card" id="photography">
+            <div class="experience-header">
+                <span class="experience-title">📸 Photography Tours</span>
+                <span class="experience-price">€50-100</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Ysios (architecture), Ameztoi (cliffs), Gorka Izagirre (mountains)</div>
+            <div class="experience-details">Guided photography sessions at golden hour. Focus on architecture, vineyard landscapes, coastal cliffs. Book through winery portals.</div>
+        </div>
+
+        <div class="experience-type-card" id="stargazing">
+            <div class="experience-header">
+                <span class="experience-title">🌌 Stargazing + Wine</span>
+                <span class="experience-price">€20-35</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Gaintza, Talai Berri (coastal, low light pollution)</div>
+            <div class="experience-details">Night sky observation with telescopes, paired with Txakoli. Talai Berri specializes in stargazing events. Check summer schedules.</div>
+        </div>
+
+        <div class="experience-type-card" id="cooking">
+            <div class="experience-header">
+                <span class="experience-title">👨‍🍳 Cooking Classes with Wine Pairing</span>
+                <span class="experience-price">€80-150</span>
+            </div>
+            <div class="experience-provider"><strong>Providers:</strong> Gorka Izagirre, Baigorri (gastronomic lunch), select Txakoli houses</div>
+            <div class="experience-details">Hands-on Basque cooking with Txakoli/Rioja pairing. Seafood, pintxos, traditional dishes. Book 2-3 weeks ahead.</div>
+        </div>
+    </section>
+
+    <!-- PRACTICAL LOGISTICS -->
+    <section class="section">
+        <h2>🚌 Practical Logistics & August Planning</h2>
+
+        <h3>🚗 Transport & Driver Services</h3>
+        <div class="tip-list">
+            <li><strong>Chauffeur Services:</strong> North Coast Tours — luxury Mercedes vans, €750 (2 pax) to €1,350 (8 pax) round-trip from Bilbao. Book early for August.</li>
+            <li><strong>Taxi Costs (one-way):</strong> Bilbao→Getaria €120-140, Bilbao→Laguardia/Elciego €160-190, Bilbao→Gernika €80-100.</li>
+            <li><strong>Public Bus (L17 Álava):</strong> Bilbao Intermodal → Laguardia (€7-13, 1h 42m). Best for Rioja Alavesa; avoids breathalyzer checkpoints.</li>
+            <li><strong>Bus to Getaria/Zarautz:</strong> Transportes PESA from Bilbao Intermodal (€10-17, 1h 28m). Euskotren train also available (€6-11, 2.5h).</li>
+            <li><strong>Barik Card:</strong> Rechargeable card for Metro Bilbao, Bizkaibus, Euskotren. Discounted fares, works across all transport.</li>
+        </div>
+
+        <h3>🏨 Best Base Towns for Winery Hopping</h3>
+        <div class="tip-list">
+            <li><strong>Laguardia:</strong> Medieval walled town, walkable to 5+ wineries, underground cellars, best restaurants.</li>
+            <li><strong>Elciego:</strong> Marqués de Riscal hotel on-site, quiet, central to Alavesa wineries.</li>
+            <li><strong>Haro:</strong> Rioja Alta capital, train station, many historic bodegas (CVNE, López de Heredia, Muga).</li>
+            <li><strong>Getaria:</strong> Coastal charm, cliff vineyards, best seafood, hotel + vineyard (Gaintza).</li>
+            <li><strong>Bilbao:</strong> Best for Bizkaiko Txakolina (20-40 min), city amenities, Metro to Artxanda.</li>
+        </div>
+
+        <h3>⚠️ August-Specific Advice</h3>
+        <div class="warning">
+            <strong>Aste Nagusia (Aug 22–30):</strong> Festival week — accommodation prices +40-60%, book 2-3 months ahead. Winery booking lead times extend to 4-6 weeks for architectural icons (Ysios, Riscal). Traffic/breathalyzer checkpoints increase on rural roads weekends. Schedule tours early morning (before 35°C inland heat). Metro Bilbao runs extended hours during festival.
+        </div>
+
+        <h3>📅 Booking Timeline for August</h3>
+        <table>
+            <thead><tr><th>Winery Type</th><th>Book By</th><th>Method</th></tr></thead>
+            <tbody>
+                <tr><td>Architectural icons (Ysios, Riscal)</td><td>Mid-July</td><td>Website/portal</td></tr>
+                <tr><td>Popular Alavesa (Baigorri, Remelluri)</td><td>Late July</td><td>Web/Email</td></tr>
+                <tr><td>Getaria Txakoli (Ameztoi, Gaintza)</td><td>Late July</td><td>Web/Email</td></tr>
+                <tr><td>Budget/authentic (El Fabulista, LAN)</td><td>Early August</td><td>Walk-in/Phone</td></tr>
+                <tr><td>Unique experiences (balloon, horseback)</td><td>Mid-July</td><td>Provider website</td></tr>
+                <tr><td>Chauffeur service</td><td>Mid-July</td><td>North Coast Tours</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- DIETARY ACCOMMODATIONS -->
+    <section class="section">
+        <h2>🥗 Dietary Accommodations at Wineries</h2>
+
+        <h3>🌾 Gluten-Free (GF)</h3>
+        <div class="tip-list">
+            <li><strong>Standard tastings</strong> serve wheat bread — request rice cakes or certified GF crackers when booking (48h notice).</li>
+            <li><strong>High-end wineries</strong> (Riscal, Baigorri, Ysios, Gorka Izagirre, Gaintza) accommodate GF with advance notice.</li>
+            <li><strong>GF-safe backup in Bilbao:</strong> Grosso Napoletana (FACE certified pizza), BAUSK (100% GF bowls), Magora Bakery (100% GF pastries).</li>
+            <li>Use <strong>FACE Móvil app</strong> for certified GF restaurant finder across Spain.</li>
+        </div>
+
+        <h3>🐟 Pescatarian / Vegetarian / Vegan</h3>
+        <div class="tip-list">
+            <li><strong>Txakoli pairings</strong> traditionally feature anchovies/tuna — request pickled artichokes, sundried tomatoes, Idiazabal cheese, or grilled vegetables as substitutes.</li>
+            <li><strong>Rioja red pairings</strong> feature chorizo, morcilla, txuleta — request grilled vegetables, mushroom dishes, Idiazabal cheese, patatas a la riojana (vegetarian).</li>
+            <li><strong>High-end restaurants</strong> (Baigorri €110 lunch, Riscal €110+ lunch) can provide modified multi-course menus with 48h notice — allergens (nuts, dairy) isolated.</li>
+            <li><strong>GF Neapolitan pizza:</strong> Grosso Napoletana Senza Glutine (FACE certified) — anchovy/tuna/veg options for pescatarians.</li>
+        </div>
+
+        <h3>🥜 Allergy Awareness</h3>
+        <div class="tip-list">
+            <li>Nuts: Common in desserts, some sauces — inform at booking.</li>
+            <li>Dairy: Cheese plates standard — request dairy-free alternatives.</li>
+            <li>Sulfites: All wines contain sulfites; organic/biodynamic wines (Artadi) typically lower.</li>
+            <li>Bring <strong>Spanish allergy card</strong> from <a href="https://www.alergia.org" target="_blank" style="color:#0066cc;">alergia.org</a> for restaurant staff.</li>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align:center;color:#888;font-size:0.9rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee;">
+        <p>Research: NotebookLM deep research (97+ sources) • Last updated: July 2026</p>
+        <p>Sources: Rioja Alavesa tourism, Getariako/Bizkaiko Txakolina DOs, winery websites, TripAdvisor Spain, Google Maps, Basque wine blogs, Michelin Guide, Repsol Guide</p>
+        <p><a href="bilbao-guide.html" style="color:#0066cc;">← Back to Main Guide</a> | <a href="restaurants/index.html" style="color:#0066cc;">Restaurant Guide</a> | <a href="day-trips.html" style="color:#0066cc;">Day Trips</a> | <a href="dietary-reference.html" style="color:#0066cc;">Dietary Reference</a></p>
+    </footer>
+</body>
+</html>
