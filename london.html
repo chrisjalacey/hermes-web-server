@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London - Friday 7 August 2026 | Unique Events Guide</title>
+    <meta name="description" content="Curated guide to unique, non-touristy events in London on Friday 7 August 2026 - secret warehouse raves, immersive theatre, hidden gems">
+    
+    <!-- Design System CSS Variables -->
+    <style>
+        :root {
+            --color-bg: #0a0a0f;
+            --color-bg-elevated: #12121a;
+            --color-bg-card: #16161f;
+            --color-border: #2a2a3a;
+            --color-border-light: #3a3a4a;
+            --color-text-primary: #f0f0f5;
+            --color-text-secondary: #a0a0b0;
+            --color-text-muted: #707080;
+            --color-accent: #e85d2e;
+            --color-accent-hover: #ff7a45;
+            --color-accent-light: rgba(232, 93, 46, 0.15);
+            --color-success: #2ecc71;
+            --color-warning: #f39c12;
+            --color-info: #3498db;
+            --color-danger: #e74c3c;
+            
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.6);
+            
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+            
+            --container-max: 1200px;
+            --header-height: 72px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(232, 93, 46, 0.08), transparent),
+                radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.05), transparent);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            height: var(--header-height);
+        }
+        
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            color: var(--color-text-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--color-accent), #ff7a45);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-text-primary);
+            background: var(--color-accent-light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid rgba(232, 93, 46, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto var(--spacing-xl);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .meta-item strong {
+            color: var(--color-text-primary);
+        }
+        
+        /* Section */
+        .section {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .section-header {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.5em;
+            background: linear-gradient(180deg, var(--color-accent), var(--color-warning));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--color-text-secondary);
+            margin-top: var(--spacing-sm);
+            font-size: 1rem;
+        }
+        
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        /* Event Card */
+        .event-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-border-light);
+        }
+        
+        .event-card.featured {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 1px var(--color-accent), var(--shadow-md);
+        }
+        
+        .event-card.featured::before {
+            content: 'EDITOR\'S PICK';
+            position: absolute;
+            top: var(--spacing-sm);
+            right: var(--spacing-sm);
+            background: var(--color-accent);
+            color: var(--color-text-primary);
+            font-size: 0.625rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            z-index: 10;
+            letter-spacing: 0.5px;
+        }
+        
+        .event-card-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+        }
+        
+        .event-category {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .cat-rave { background: rgba(231, 76, 60, 0.2); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3); }
+        .cat-theatre { background: rgba(155, 89, 182, 0.2); color: #9b59b6; border: 1px solid rgba(155, 89, 182, 0.3); }
+        .cat-wellness { background: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.3); }
+        .cat-hidden { background: rgba(52, 152, 219, 0.2); color: #3498db; border: 1px solid rgba(52, 152, 219, 0.3); }
+        .cat-immersive { background: rgba(243, 156, 18, 0.2); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.3); }
+        
+        .event-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-text-primary);
+        }
+        
+        .event-body {
+            padding: var(--spacing-lg);
+        }
+        
+        .event-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .event-detail:last-child {
+            margin-bottom: 0;
+        }
+        
+        .event-detail-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+        
+        .event-detail strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+        
+        .event-description {
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+        }
+        
+        .tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        
+        .tag:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+        
+        .event-footer {
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg-elevated);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: 1px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-text-primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text-secondary);
+            border-color: var(--color-border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            border-color: var(--color-border-light);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-accent-light);
+        }
+        
+        /* Top Picks Section */
+        .top-picks {
+            background: linear-gradient(135deg, rgba(232, 93, 46, 0.08), rgba(52, 152, 219, 0.05));
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .top-picks-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .top-picks-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-warning));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .top-picks h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .pick-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .pick-item {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            transition: all var(--transition-fast);
+        }
+        
+        .pick-item:hover {
+            border-color: var(--color-accent);
+            transform: translateX(4px);
+        }
+        
+        .pick-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--color-accent);
+            color: var(--color-text-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .pick-title {
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .pick-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Access Tips */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .tip-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-fast);
+        }
+        
+        .tip-card:hover {
+            border-color: var(--color-border-light);
+            transform: translateY(-2px);
+        }
+        
+        .tip-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--spacing-md);
+            background: var(--color-accent-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        .tip-title {
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .tip-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 64px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .event-card,
+        .pick-item,
+        .tip-card {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.15s; }
+        .event-card:nth-child(3) { animation-delay: 0.2s; }
+        .event-card:nth-child(4) { animation-delay: 0.25s; }
+        .event-card:nth-child(5) { animation-delay: 0.3s; }
+        .event-card:nth-child(6) { animation-delay: 0.35s; }
+        .event-card:nth-child(7) { animation-delay: 0.4s; }
+        .event-card:nth-child(8) { animation-delay: 0.45s; }
+        .event-card:nth-child(9) { animation-delay: 0.5s; }
+        
+        /* Print styles */
+        @media print {
+            .header, .footer, .btn { display: none; }
+            .event-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+            body { background: white; color: black; }
+            body::before { display: none; }
+        }
+    </style>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🗺️</span>
+                <span>Travel Guides</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bilbao-guide.html">Bilbao</a></li>
+                    <li><a href="london.html" class="active">London</a></li>
+                    <li><a href="restaurants/index.html">Restaurants</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="hero-badge">🗓️ Friday 7 August 2026</span>
+                <h1>London — Unique Events & Hidden Gems</h1>
+                <p class="hero-subtitle">Curated from 98 deep-research sources: secret warehouse raves, immersive theatre, somatic experiences, and underground club nights. No Madame Tussauds, no London Eye — only the real London.</p>
+                
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <strong>📅 Date:</strong> Friday, 7 August 2026
+                    </div>
+                    <div class="meta-item">
+                        <strong>🔍 Sources:</strong> 98 (RA, DesignMyNight, Timeout, Ticketmaster, Fever, venue sites)
+                    </div>
+                    <div class="meta-item">
+                        <strong>🎯 Focus:</strong> Non-touristy, gatekept, unique
+                    </div>
+                    <div class="meta-item">
+                        <strong>💰 Budget:</strong> £5–£145+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Picks -->
+        <section class="section">
+            <div class="container">
+                <div class="top-picks">
+                    <div class="top-picks-header">
+                        <div class="top-picks-icon">⭐</div>
+                        <h3>Editor's Top 3 Picks for Fri 7 Aug</h3>
+                    </div>
+                    <div class="pick-list">
+                        <div class="pick-item">
+                            <div class="pick-rank">1</div>
+                            <div class="pick-title">SIMMS Birthday Shubz</div>
+                            <div class="pick-desc">The most authentically "secret London" experience — gatekept warehouse rave in Hackney with heritage sound system culture (jungle, electro, bassline, dubstep). Location revealed only to ticket holders via encrypted channels.</div>
+                        </div>
+                        <div class="pick-item">
+                            <div class="pick-rank">2</div>
+                            <div class="pick-title">Chat Noir! (The Lost Estate)</div>
+                            <div class="pick-desc">Full-evening immersive cabaret in a hidden West Kensington warehouse — 1890s Montmartre recreation with 3-course French dining, absinthe, live orchestra, and actors as Toulouse-Lautrec & Erik Satie. 220 guests max.</div>
+                        </div>
+                        <div class="pick-item">
+                            <div class="pick-rank">3</div>
+                            <div class="pick-title">The Sauna Rave at &Soul</div>
+                            <div class="pick-desc">Truly unique: somatic contrast therapy (60–90°C sauna → 4°C ice baths) with a live DJ performing inside the custom circular sauna. Phone-free, "topless-free" safe space in Shoreditch.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secret Warehouse Raves -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Secret Warehouse Raves & Underground Club Nights</h2>
+                    <p class="section-subtitle">Gatekept, location-hidden events for the heads. Buy tickets early — locations revealed 24–48hrs before via encrypted channels.</p>
+                </div>
+                
+                <div class="card-grid">
+                    <!-- SIMMS Birthday Shubz -->
+                    <article class="event-card featured">
+                        <header class="event-card-header">
+                            <span class="event-category cat-rave">🎧 Warehouse Rave</span>
+                            <h3 class="event-title">SIMMS Birthday Shubz</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Secret Hackney location</strong> — revealed to ticket holders only</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – 04:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £12.50</strong> via Resident Advisor</span>
+                            </div>
+                            <div class="event-description">
+                                Heritage-focused UK sound system culture — jungle, electro, bassline, dubstep. Lineup: SIMMS, Freja B2B Nio-B, ASIAN BRAT. Insulated community-driven gathering avoiding commercial branding. Strict no-photo policy.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">jungle</span>
+                                <span class="tag">electro</span>
+                                <span class="tag">bassline</span>
+                                <span class="tag">dubstep</span>
+                                <span class="tag">gatekept</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/2482945" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                            <a href="https://whatnightout.uk/london/" target="_blank" rel="noopener" class="btn btn-secondary">More Info</a>
+                        </footer>
+                    </article>
+
+                    <!-- Kik0 Runway / Rave -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-rave">🎧 Fashion + Rave</span>
+                            <h3 class="event-title">Kik0 Runway / Rave</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>The Distillery N17</strong> — working rum distillery, Tottenham</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – 05:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>£5 – £15</strong> via Resident Advisor</span>
+                            </div>
+                            <div class="event-description">
+                                Hybrid event: independent designer runway show transitions into experimental warehouse rave. Genres: hyperpop, underground rap, hardstyle, bassline. Community hub where fashion and nightlife intersect.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">hyperpop</span>
+                                <span class="tag">underground rap</span>
+                                <span class="tag">hardstyle</span>
+                                <span class="tag">fashion</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/2477385" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                        </footer>
+                    </article>
+
+                    <!-- TraTraTrax -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-rave">🎧 Label Showcase</span>
+                            <h3 class="event-title">TraTraTrax at The Cause</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>The Cause, Canning Town</strong> — industrial complex</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – 06:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>£10 – £40</strong> via RA / Dice.fm</span>
+                            </div>
+                            <div class="event-description">
+                                Colombian label showcase blending Latin American percussive rhythms (neoperreo) with UK bass and IDM. Dock Road: Globalized Percussive Bass. Heavy sound system in industrial setting.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">neoperreo</span>
+                                <span class="tag">UK bass</span>
+                                <span class="tag">IDM</span>
+                                <span class="tag">Latin electronic</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/2485731" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                            <a href="https://events.musicofourdesire.com/" target="_blank" rel="noopener" class="btn btn-secondary">More Info</a>
+                        </footer>
+                    </article>
+
+                    <!-- Sounds Crazy -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-rave">🎧 D&B Secret Lineup</span>
+                            <h3 class="event-title">Sounds Crazy @ The Cause</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Hot House Room, The Cause</strong> — same complex as TraTraTrax</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – 06:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>£5 – £30</strong> via Resident Advisor</span>
+                            </div>
+                            <div class="event-description">
+                                High-intensity "no ego" underground Drum & Bass with a completely secret lineup. Heavy bass-focused sound system. Parallel subcultural environment in the same industrial complex as TraTraTrax.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">drum & bass</span>
+                                <span class="tag">secret lineup</span>
+                                <span class="tag">no ego</span>
+                                <span class="tag">heavy bass</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                        </footer>
+                    </article>
+
+                    <!-- FOLD KEY VINYL -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-rave">🎧 Vinyl-Only Techno</span>
+                            <h3 class="event-title">FOLD presents KEY VINYL</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>FOLD, Canning Town</strong> — remote industrial location</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – late</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £10</strong> via Resident Advisor</span>
+                            </div>
+                            <div class="event-description">
+                                For techno purists: vinyl-only event with strict photography ban. Remote industrial location insulates from casual tourists. Canning Town's industrial techno cathedral.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">vinyl only</span>
+                                <span class="tag">techno</span>
+                                <span class="tag">no photos</span>
+                                <span class="tag">purist</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                        </footer>
+                    </article>
+
+                    <!-- Patterns at Spanners -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-hidden">🎧 Grassroots Community</span>
+                            <h3 class="event-title">Patterns: NZO Live Debut</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Spanners, Loughborough Junction</strong> — intimate yellow railway arch</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>22:00 – 03:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>£5 – £15</strong> via Resident Advisor</span>
+                            </div>
+                            <div class="event-description">
+                                First-ever London live performance of experimental electronic artist NZO (Demdike Stare label) + Manchester DJ KD22LR + Patterns boss Lali. Grassroots, queer-inclusive, community-focused with accessibility guide and zero-tolerance charter.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">experimental</span>
+                                <span class="tag">NZO live</span>
+                                <span class="tag">queer-inclusive</span>
+                                <span class="tag">community</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://ra.co/events/" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on RA</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immersive Theatre -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Immersive Theatre & Interactive Experiences</h2>
+                    <p class="section-subtitle">World-class immersive productions running on Fri 7 Aug — book ahead, these sell out.</p>
+                </div>
+                
+                <div class="card-grid">
+                    <!-- Chat Noir -->
+                    <article class="event-card featured">
+                        <header class="event-card-header">
+                            <span class="event-category cat-immersive">🎭 Immersive Cabaret</span>
+                            <h3 class="event-title">Chat Noir! by The Lost Estate</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>9 Beaumont Ave, West Kensington</strong> — discrete warehouse</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>~3.5 hrs from 18:45</strong> (doors 18:15)</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £99.85</strong> at chatnoirlondon.com</span>
+                            </div>
+                            <div class="event-description">
+                                1890s Montmartre cabaret recreation — 220 guests cast as visitors to a bohemian salon. Actors as Toulouse-Lautrec, Erik Satie interact directly at your table. 3-course French dining (onion soup, coq au vin) + absinthe cocktails + aerial arts + live chanson. Runs until 28 Jun 2026 (check for extensions).
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">fine dining</span>
+                                <span class="tag">absinthe</span>
+                                <span class="tag">220 guests max</span>
+                                <span class="tag">actor interaction</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://chatnoirlondon.com" target="_blank" rel="noopener" class="btn btn-primary">🎫 Book Now</a>
+                            <a href="https://www.ticketmaster.co.uk/" target="_blank" rel="noopener" class="btn btn-secondary">Ticketmaster</a>
+                        </footer>
+                    </article>
+
+                    <!-- The Magician's Table -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-theatre">🎭 Close-Up Magic</span>
+                            <h3 class="event-title">The Magician's Table</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>The Vaults, Waterloo</strong> — subterranean railway arches</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>19:30 – 21:30</strong> (arrive 45–60 min early for "Magic Hour")</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £69</strong> at magicianstablelive.com</span>
+                            </div>
+                            <div class="event-description">
+                                Wake of a fictional magician — world-class sleight-of-hand performed inches from your face at your table. 8 magicians/night (rotating cast of 18), no two shows alike. Deliberately social format: no screens, no distance, no "stage trickery". Located in The Vaults' atmospheric railway arches.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">close-up magic</span>
+                                <span class="tag">8 magicians</span>
+                                <span class="tag">no screens</span>
+                                <span class="tag">social format</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://magicianstablelive.com" target="_blank" rel="noopener" class="btn btn-primary">🎫 Book Now</a>
+                        </footer>
+                    </article>
+
+                    <!-- Bridge Command -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-immersive">🚀 Starship Simulation</span>
+                            <h3 class="event-title">Bridge Command</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Vauxhall</strong> — purpose-built starship set</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Various time slots</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>£40 – £60</strong> at bridgecommand.space</span>
+                            </div>
+                            <div class="event-description">
+                                Crew a starship at physical consoles — solve real-time crises with live actors, dynamic set responding to your inputs. You get a uniform, meet characters, maintain ship systems. Purpose-built sci-fi simulation, not VR — all physical.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">sci-fi</span>
+                                <span class="tag">physical sets</span>
+                                <span class="tag">live actors</span>
+                                <span class="tag">team-based</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://bridgecommand.space" target="_blank" rel="noopener" class="btn btn-primary">🎫 Book Mission</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Gems -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hidden Gems & Experimental Events</h2>
+                    <p class="section-subtitle">One-of-a-kind experiences you won't find in guidebooks — somatic raves, projection mapping in cathedrals, grassroots community nights.</p>
+                </div>
+                
+                <div class="card-grid">
+                    <!-- Sauna Rave -->
+                    <article class="event-card featured">
+                        <header class="event-card-header">
+                            <span class="event-category cat-wellness">🧖 Somatic Rave</span>
+                            <h3 class="event-title">The Sauna Rave at The Sanctuary &Soul</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>The Sanctuary &Soul, Shoreditch</strong> — custom circular sauna</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>20:00 – 21:30</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £24.75</strong> via DesignMyNight / Eventbrite</span>
+                            </div>
+                            <div class="event-description">
+                                High-intensity contrast therapy: sweat in 60–90°C custom circular sauna with surround sound (live DJ performs inside hot zone) → immediate 4°C cold-water immersion (chill tubs, mist showers, ice baths). Phone-free, "topless-free" safe space. Plant-based café, alcohol-free botanical bar. Designed to connect mind, body, spirit.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">contrast therapy</span>
+                                <span class="tag">live DJ in sauna</span>
+                                <span class="tag">phone-free</span>
+                                <span class="tag">safe space</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://www.designmynight.com/london/bars/shoreditch/the-sanctuary" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets</a>
+                            <a href="https://www.eventbrite.co.uk/" target="_blank" rel="noopener" class="btn btn-secondary">Eventbrite</a>
+                        </footer>
+                    </article>
+
+                    <!-- Luminiscence -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-hidden">✨ Projection Mapping</span>
+                            <h3 class="event-title">Luminiscence at Westminster Cathedral</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Westminster Cathedral, Victoria</strong> — neo-Byzantine interior</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>21:00</strong></span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £32.50</strong> via feverup.com</span>
+                            </div>
+                            <div class="event-description">
+                                3D architectural projection mapping inside the cathedral — digitally completes the unfinished bare domes with mosaic designs. Narrative by BAFTA/Olivier winner Tim Whitnall, voiced by Hugh Bonneville. Live Lux Aeterna choir performing classical arrangements of Bach, Vivaldi, Beethoven, Debussy. Traces London's evolution from modest origins to global hub.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">3D projection</span>
+                                <span class="tag">live choir</span>
+                                <span class="tag">cathedral</span>
+                                <span class="tag">immersive art</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://feverup.com/" target="_blank" rel="noopener" class="btn btn-primary">🎫 Tickets on Fever</a>
+                        </footer>
+                    </article>
+
+                    <!-- Additional: Secret Cinema Grease (running through Aug) -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-immersive">🎬 Immersive Cinema</span>
+                            <h3 class="event-title">Secret Cinema: Grease</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Evolution London</strong> — purpose-built Rydell High</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Various slots</strong> (22 Jul – 13 Sep 2026)</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £79</strong> at secretcinema.com</span>
+                            </div>
+                            <div class="event-description">
+                                Step inside Grease — dress as a T-Bird or Pink Lady, explore purpose-built Rydell High sets, interact with cast, complete missions, then watch the film. The OG of immersive cinema (since 2007). Also building new permanent home on Greenwich Peninsula opening late 2026.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">dress up</span>
+                                <span class="tag">interactive sets</span>
+                                <span class="tag">OG immersive</span>
+                                <span class="tag">22 Jul–13 Sep</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://secretcinema.com/" target="_blank" rel="noopener" class="btn btn-primary">🎫 Book Now</a>
+                        </footer>
+                    </article>
+
+                    <!-- Additional: Supperclub.tube -->
+                    <article class="event-card">
+                        <header class="event-card-header">
+                            <span class="event-category cat-hidden">🚇 Dining in a Tube Carriage</span>
+                            <h3 class="event-title">Supperclub.tube</h3>
+                        </header>
+                        <div class="event-body">
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/><path d="M17 14h.01"/><path d="M12 14h.01"/><path d="M7 14h.01"/><path d="M21 20H5"/><path d="M9 10V4"/></svg>
+                                <span><strong>Walthamstow</strong> — decommissioned 1967 Victoria Line carriage</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>3 nights/week</strong> (check schedule)</span>
+                            </div>
+                            <div class="event-detail">
+                                <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>From £85</strong> via Explore Tock</span>
+                            </div>
+                            <div class="event-description">
+                                6-course Colombian tasting menu inside a real 1967 Tube carriage with original windows, signs, features. Chef Beatriz Maldonado Carreño (top Colombia/London restaurants). Curated playlist, dimmed lights. Menu changes frequently — always delicious. 3 nights/week.
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">1967 tube carriage</span>
+                                <span class="tag">Colombian tasting</span>
+                                <span class="tag">original features</span>
+                                <span class="tag">unique venue</span>
+                            </div>
+                        </div>
+                        <footer class="event-footer">
+                            <a href="https://www.exploretock.com/supperclubtube" target="_blank" rel="noopener" class="btn btn-primary">🎫 Book via Tock</a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Tips -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How to Get Tickets & Access</h2>
+                    <p class="section-subtitle">Practical tips for navigating London's gatekept underground scene.</p>
+                </div>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎫</div>
+                        <h4 class="tip-title">Resident Advisor (RA)</h4>
+                        <p class="tip-desc">Primary platform for warehouse/club events. Create account, enable notifications for favourite promoters. Tickets often sell out in minutes.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📱</div>
+                        <h4 class="tip-title">Encrypted Location Reveals</h4>
+                        <p class="tip-desc">For secret events (SIMMS, etc.), locations sent via encrypted email/Telegram 24–48hrs before. Check spam folder. Have phone charged for navigation.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">💷</div>
+                        <h4 class="tip-title">Cash & ID Ready</h4>
+                        <p class="tip-desc">Many warehouse venues: cash-only bars, strict 18+/21+ ID checks. Bring physical ID (passport/driving licence) — photos on phone often rejected.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🕐</div>
+                        <h4 class="tip-title">Arrive Early or On Time</h4>
+                        <p class="tip-desc">Secret locations often have single entry points — queues form fast. For immersive dining/theatre: arrive 15–30 mins before stated time for check-in.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🔕</div>
+                        <h4 class="tip-title">Respect No-Photo Policies</h4>
+                        <p class="tip-desc">Strict at FOLD, SIMMS, Sauna Rave, most warehouse events. Phone cameras ruin the vibe and can get you ejected. Be present.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🚇</div>
+                        <h4 class="tip-title">Plan Transport Home</h4>
+                        <p class="tip-desc">Events end 3–6am. Night Tube (Fri/Sat) on Victoria, Jubilee, Central, Northern, Piccadilly lines. Uber/Bolt surge pricing — check buses (N-routes) or pre-book.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="copyright">
+                        Research conducted via NotebookLM (98 sources) · Curated for Friday 7 August 2026 · 
+                        <a href="https://github.com/" target="_blank" rel="noopener" style="color: var(--color-text-muted);">Source</a>
+                    </div>
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="bilbao-guide.html">Bilbao Guide</a>
+                        <a href="restaurants/index.html">Restaurants</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Smooth scroll polyfill for older browsers -->
+    <script>
+        // Simple intersection observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.event-card, .pick-item, .tip-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
