@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Guide — Bilbao & Basque Country</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #2d2d2d; max-width: 1000px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2.2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #333; margin-top: 32px; margin-bottom: 12px; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        
+        /* Beach cards */
+        .beach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .beach-card { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 24px; border-top: 4px solid #0066cc; }
+        .beach-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+        .beach-name { font-size: 1.25rem; font-weight: 600; color: #1a1a2e; }
+        .beach-type { background: #e3f2fd; color: #1565c0; padding: 4px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600; }
+        .beach-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; font-size: 0.9rem; }
+        .meta-item { background: #f5f5f5; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .meta-label { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+        .badge-blueflag { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-tourist { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-surf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        
+        .beach-facilities { margin-bottom: 16px; }
+        .beach-facilities ul { margin: 8px 0 0 20px; padding: 0; }
+        .beach-facilities li { margin-bottom: 6px; }
+        
+        /* Tables */
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+        th { background: #f5f5f5; font-weight: 600; color: #333; position: sticky; top: 0; z-index: 1; }
+        tr:hover { background: #fafafa; }
+        
+        .practical-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 16px; }
+        .practical-item { background: #f5f5f5; padding: 16px; border-radius: 8px; border: 1px solid #eee; }
+        .practical-label { color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600; }
+        
+        .warning { background: #fff3e0; border-left: 4px solid #f5a623; padding: 16px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .warning strong { color: #c64a00; }
+        
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } .beach-meta { grid-template-columns: 1fr; } table { font-size: 0.75rem; } }
+    </style>
+</head>
+<body>
+    <a href="bilbao-guide.html" class="back-link">← Back to Main Guide</a>
+    <h1>🏖️ Beach Guide — Basque Coast & Getaria</h1>
+    <p class="subtitle">Beaches, coves, and coastal spots for mid-August visitors — facilities, transport & practical tips</p>
+
+    <!-- KEY INSIGHTS -->
+    <section class="section" style="background: #e3f2fd; border-left: 4px solid #1565c0;">
+        <h2>🔑 Key Insights for Beach-Goers</h2>
+        <ul>
+            <li><strong>August water temperature:</strong> 21–24°C — perfect for swimming; 3/2mm wetsuit for surf.</li>
+            <li><strong>Getaria's Malkorbe Beach:</strong> Blue Flag, sandy, calm waters, full facilities, 5 min walk from town centre.</li>
+            <li><strong>Zarautz (15 min away):</strong> 2.5–3 km of sand — longest Basque beach, surf capital, big parking but busy in August.</li>
+            <li><strong>Flysch Coast (Zumaia/Deba):</strong> Dramatic vertical rock strata; low tide essential for access.</li>
+            <li><strong>Parking in Getaria:</strong> Blue Zone regulated daily 10:00–20:00 (June–Sept); €1.50/hr, €12/day max.</li>
+            <li><strong>Dogs:</strong> Prohibited during bathing hours; allowed 21:00–06:00 (Easter–Oct 14).</li>
+        </ul>
+    </section>
+
+    <!-- GETARIA BEACHES -->
+    <section class="section">
+        <h2>🏖️ Getaria Town Beaches</h2>
+        <p style="color:#666; margin-bottom:20px;">Getaria has three main beaches, all within easy walking distance of the town centre and harbour.</        <div class="beach-grid">
+            <div class="beach-card">
+                <div class="beach-header">
+                    <span class="beach-name">Malkorbe Beach</span>
+                    <span class="beach-type">Sandy / Calm Waters</span>
+                    <span class="badge badge-blueflag">Blue Flag</span>
+                    <span class="badge badge-local">Local Favourite</span>
+                </div>
+                <div class="beach-meta">
+                    <div class="meta-item"><div class="meta-label">Distance from Town Centre</div><div class="meta-value">~500 m / 5 min walk</div></div>
+                    <div class="meta-item"><div class="meta-label">Distance from Calle García Salazar</div><div class="meta-value">~35 km / 35 min drive</div></div>
+                    <div class="meta-item"><div class="meta-label">Blue Flag</div><div class="meta-value">Yes (high water quality & environmental management)</div></div>
+                    <div class="meta-item"><div class="meta-label">Lifeguards</div><div class="meta-value">June – September</div></div>
+                    <div class="meta-item"><div class="meta-label">Accessibility</div><div class="meta-value">Amphibious chairs, adapted toilets, ramp access</div></div>
+                </div>
+                <div class="beach-facilities">
+                    <strong>Facilities:</strong>
+                    <ul>
+                        <li>Toilets, showers, foot showers</li>
+                        <li>Litter bins, sunbed/umbrella hire</li>
+                        <li>Yacht club facilities nearby</li>
+                        <li>Amphibious chairs & adapted toilets</li>
+                        <li>Chiringuitos (beach bars) on-site</li>
+                    </ul>
+                </div>
+                <div class="practical-grid">
+                    <div class="practical-item"><div class="practical-label">Parking</div><div class="meta-value">Patrolled lot, 100+ spaces; Getaria Blue Zone applies</div></div>
+                    <div class="practical-item"><div class="practical-label">Blue Zone Hours</div><div class="meta-value">Daily 10:00–20:00 (June 1 – Sept 30)</div></div>
+                    <div class="practical-item"><div class="practical-label">Blue Zone Cost</div><div class="meta-value">30 min: €0.75 | 1h: €1.50 | 2h: €3.00 | 10h: €12.00</div></div>
+                    <div class="practical-item"><div class="practical-label">Transport from Getaria Centre</div><div class="meta-value">5 min walk; Lurraldebus UK10/UK11 from Zumaia/Deba</div></div>
+                </div>
+            </div>
+
+            <div class="beach-card">
+                <div class="beach-header">
+                    <span class="beach-name">Gaztetape Beach</span>
+                    <span class="beach-type">Sandy / West-Facing</span>
+                </div>
+                <div class="beach-meta">
+                    <div class="meta-item"><div class="meta-label">Distance from Town Centre</div><div class="meta-value">~800 m / 10 min walk</div></div>
+                    <div class="meta-item"><div class="meta-label">Orientation</div><div class="meta-value">West-facing — sunset views</div></div>
+                    <div class="meta-item"><div class="meta-label">Best For</div><div class="meta-value">Canoeing, kayaking, sailing, sheltered from wind</div></div>
+                    <div class="meta-item"><div class="meta-label">Lifeguards</div><div class="meta-value">Summer season</div></div>
+                </div>
+                <div class="beach-facilities">
+                    <strong>Features:</strong>
+                    <ul>
+                        <li>Sheltered from prevailing winds</li>
+                        <li>Accessible via staircase or ramp (right side)</li>
+                        <li>Ideal for paddle sports</li>
+                        <li>Urban district services nearby</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="beach-card">
+                <div class="beach-header">
+                    <span class="beach-name">Orruaga</span>
+                    <span class="beach-type">Pebble / Rocky</span>
+                    <span class="badge badge-surf">Surf Spot</span>
+                </div>
+                <div class="beach-meta">
+                    <div class="meta-item"><div class="meta-label">Location</div><div class="meta-value">Between Getaria & Zumaia (N-634)</div></div>
+                    <div class="meta-item"><div class="meta-label">Best For</div><div class="meta-value">Surfing, sport fishing, quieter atmosphere</div></div>
+                    <div class="meta-item"><div class="meta-label">Facilities</div><div class="meta-value">Basic; no chiringuitos on-site</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZARAUTZ BEACH -->
+    <section class="section">
+        <h2>🏄 Zarautz Beach — Basque Surf Capital (15 min from Getaria)</h2>
+        <p style="color:#666; margin-bottom:20px;">The longest beach on the Basque coast (2.5–3 km), internationally renowned for surfing, with extensive promenade and full facilities.</        <div class="beach-grid">
+            <div class="beach-card">
+                <div class="beach-header">
+                    <span class="beach-name">Zarautz Main Beach</span>
+                    <span class="beach-type">Sandy / 2.5–3 km</span>
+                    <span class="badge badge-blueflag">Blue Flag</span>
+                    <span class="badge badge-surf">Surf Capital</span>
+                    <span class="badge badge-tourist">Busy in August</span>
+                </div>
+                <div class="beach-meta">
+                    <div class="meta-item"><div class="meta-label">Distance from Getaria</div><div class="meta-value">3.3 km / 15 min drive / 10 min bus</div></div>
+                    <div class="meta-item"><div class="meta-label">Length</div><div class="meta-value">2.5–3 km (longest on Basque coast)</div></div>
+                    <div class="meta-item"><div class="meta-label">Lifeguards</div><div class="meta-value">June – September</div></div>
+                    <div class="meta-item"><div class="meta-label">Blue Flag</div><div class="meta-value">Yes (clean sands, excellent maintenance)</div></div>
+                    <div class="meta-item"><div class="meta-label">Surfing</div><div class="meta-value">Beach break for all levels; Zarautz Pro competition venue</div></div>
+                </div>
+                <div class="beach-facilities">
+                    <strong>Facilities:</strong>
+                    <ul>
+                        <li>Extensive promenade with restaurants, cafés, shops</li>
+                        <li>Showers & public toilets along the length</li>
+                        <li>Large regulated parking areas behind beach</li>
+                        <li>Surf schools: Zarautz Surf Eskola, Pukas Surf School</li>
+                        <li>SUP/kayak rentals available</li>
+                    </ul>
+                </div>
+                <div class="practical-grid">
+                    <div class="practical-item"><div class="practical-label">Distance from Getaria</div><div class="meta-value">3.3 km / 10 min drive / 10 min bus (Lurraldebus UK10/UK11)</div></div>
+                    <div class="practical-item"><div class="practical-label">Parking</div><div class="meta-value">Large regulated lots behind beach; very busy in August</div></div>
+                    <div class="practical-item"><div class="meta-label">August Crowds</div><div class="meta-value">Very busy — arrive before 11:00 for parking</div></div>
+                    <div class="practical-item"><div class="practical-label">Surf Wetsuit</div><div class="meta-value">3/2mm recommended for August (21–24°C water)</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEARBY BEACHES -->
+    <section class="section">
+        <h2>🗺️ Nearby Beaches (Within 30 min of Getaria)</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Beach / Location</th><th>Type / Features</th><th>Best For</th><th>Transport from Getaria</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Itzurun (Zumaia)</strong></td><td>Sandy; famous <em>Flysch</em> vertical rock strata; low tide essential</td><td>Geology enthusiasts, photographers, coastal hikers</td><td>Lurraldebus UK09/UK10/UK11 — 10–15 min to Zumaia</td></tr>
+                    <tr><td><strong>Santiago (Deba)</strong></td><td>Large sandy beach at Deba river mouth; Flysch formations</td><td>Coastal hikers, families, Flysch access</td><td>Lurraldebus UK09/UK10/UK11 — 20 min to Deba</td></tr>
+                    <tr><td><strong>La Concha (San Sebastián)</strong></td><td>1.5 km elegant crescent; calm waters; elegant promenade</td><td>Leisurely swimming, scenic walks, iconic views</td><td>Lurraldebus UK10/UK11 — 30–40 min</td></tr>
+                    <tr><td><strong>Ondarreta (San Sebastián)</strong></td><td>Family-oriented; kids' playground on sand; Peine del Viento</td><td>Families with children, calmer swimming</td><td>Lurraldebus UK10/UK11 — 30–40 min + local bus</td></tr>
+                    <tr><td><strong>Zurriola (San Sebastián)</strong></td><td>Young, dynamic; primary surf beach; modern promenade</td><td>Surfers, youth crowds, nightlife nearby</td><td>Lurraldebus UK10/UK11 — 30–40 min + local bus</td></tr>
+                    <tr><td><strong>Azkorri (Getxo)</strong></td><td>Large sandy area with stones/grassy rests; nudist-friendly section</td><td>Nudists, wild landscape lovers, cliff walks</td><td>Car 60–70 min via AP-8; or Metro + bus</td></tr>
+                    <tr><td><strong>Saturraran (Mutriku)</strong></td><td>Natural setting near Biscay border; quieter</td><td>Nature lovers, solitude seekers</td><td>Car 25 min via N-634</td></tr>
+                    <tr><td><strong>Barinatxe / La Salvaje (Sopelana)</strong></td><td>Surf beach; cliffs; popular with younger crowds</td><td>Surfers, youth, sunset views</td><td>Car 60 min via AP-8; Metro + bus</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- BASQUE COAST REGIONS -->
+    <section class="section">
+        <h2>🗺️ Basque Coast Regions & Transit from Getaria</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Region</th><th>Key Beaches</th><th>Transport from Getaria</th><th>Time</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Flysch Coast</strong> (Zumaia, Deba, Mutriku)</td><td>Itzurun, Santiago, Saturraran</td><td>Lurraldebus UK09/UK10/UK11</td><td>10–20 min</td></tr>
+                    <tr><td><strong>San Sebastián Area</strong></td><td>La Concha, Ondarreta, Zurriola</td><td>Lurraldebus UK10/UK11</td><td>30–40 min</td></tr>
+                    <tr><td><strong>Bilbao / Getxo Area</strong></td><td>Azkorri, Barinatxe (La Salvaje), Ereaga</td><td>Car via AP-8; or Metro + bus</td><td>60–70 min</td></tr>
+                    <tr><td><strong>Uribe Kosta / Bakio</strong></td><td>Bakio, Mundaka, Barinatxe</td><td>Car via N-634/BI-631 coastal</td><td>25–40 min</td></tr>
+                    <tr><td><strong>Hondarribia / Hendaye</strong></td><td>Hondarribia beach, Hendaye (cross-border)</td><td>Car via AP-8; or bus from San Sebastián</td><td>45–60 min</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- PRACTICAL INFO -->
+    <section class="section">
+        <h2>📋 Practical Information Table</h2>
+        <div class="practical-grid">
+            <div class="practical-item"><div class="practical-label">Parking (Getaria Blue Zone)</div><div class="meta-value">Regulated daily 10:00–20:00 (June 1 – Sept 30)</div></div>
+            <div class="practical-item"><div class="practical-label">Parking Costs</div><div class="meta-value">30 min: €0.75 | 1h: €1.50 | 2h: €3.00 | 10h max: €12.00</div></div>
+            <div class="practical-item"><div class="practical-label">Lifeguard Season</div><div class="meta-value">June – September (standard high season)</div></div>
+            <div class="practical-item"><div class="practical-label">August Water Temp</div><div class="meta-value">21–24°C (3/2mm wetsuit for surf)</div></div>
+            <div class="practical-item"><div class="practical-label">Tides</div><div class="meta-value">Low tide essential for Flysch (Zumaia/Deba); check local tables</div></div>
+            <div class="practical-item"><div class="practical-label">Dog Rules</div><div class="meta-value">Prohibited bathing hours; allowed 21:00–06:00 (Easter–Oct 14)</div></div>
+            <div class="practical-item"><div class="practical-label">Blue Flag Beaches (near Getaria)</div><div class="meta-value">Malkorbe (Getaria), Zarautz, La Concha, Ondarreta</div></div>
+            <div class="practical-item"><div class="practical-label">Chiringuitos</div><div class="meta-value">Malkorbe (Getaria), Zarautz promenade, San Sebastián beaches</div></div>
+        </div>
+    </section>
+
+    <!-- BEACH CULTURE & TIPS -->
+    <section class="section">
+        <h2>🌊 Beach Culture & August Tips</h2>
+        <div class="warning">
+            <strong>August Crowds:</strong> All beaches busy 11:00–19:00. Arrive before 10:30 for parking at Zarautz/Malkorbe. San Sebastián beaches extremely crowded — consider Getaria/Zarautz instead.
+        </div>
+        <div class="practical-grid">
+            <div class="practical-item"><div class="practical-label">Typical Beach Hours</div><div class="meta-value">11:00–20:00 peak; Spanish families arrive 12:00–13:00, stay till sunset</div></div>
+            <div class="practical-item"><div class="practical-label">Nudist Sections</div><div class="meta-value">Azkorri (Getxo), Saturraran (Mutriku), parts of Barinatxe; signposted</div></div>
+            <div class="practical-item"><div class="practical-label">Best Times</div><div class="meta-value">Early morning (9:00–11:00) for space; late afternoon (18:00+) for cooler temps</div></div>
+            <div class="practical-item"><div class="practical-label">Tide Awareness</div><div class="meta-value">Flysch (Zumaia/Deba) only accessible at low tide; check tables day before</div></div>
+        </div>
+    </section>
+
+    <!-- WATER SPORTS -->
+    <section class="section">
+        <h2>🏄 Water Sports & Rentals</h2>
+        <div class="practical-grid">
+            <div class="practical-item"><div class="practical-label">Surf Schools (Zarautz)</div><div class="meta-value">Zarautz Surf Eskola (beginner-friendly, laid-back) | Pukas Surf School (pro instructors, beachfront)</div></div>
+            <div class="practical-item"><div class="practical-label">Surf Schools (Getaria)</div><div class="meta-value">Smaller, beginner-friendly waves; enquire locally at Malkorbe</div></div>
+            <div class="practical-item"><div class="practical-label">SUP / Kayak Rentals</div><div class="meta-value">Malkorbe Beach (Getaria) — kayak & SUP hire | Ondarreta (San Sebastián) — SUP hire</div></div>
+            <div class="practical-item"><div class="practical-label">August Conditions</div><div class="meta-value">Smaller summer swells = ideal for beginners; 3/2mm wetsuit recommended</div></div>
+            <div class="practical-item"><div class="practical-label">Wetsuit Hire</div><div class="meta-value">Available at most surf schools (included in lesson or €10–15/day)</div></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align:center;color:#888;font-size:0.9rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee;">
+        <p><a href="bilbao-guide.html" style="color:#0066cc;">← Back to Main Guide</a> | <a href="day-trips.html#getaria" style="color:#0066cc;">Getaria Day Trip</a> | <a href="wineries.html#gaintza" style="color:#0066cc;">Gaintza Winery</a></p>
+        <p>Research: NotebookLM deep research (10+ sources) • Last updated: July 2026</p>
+    </footer>
+</body>
+</html>
