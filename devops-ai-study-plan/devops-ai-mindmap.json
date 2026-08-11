@@ -1,0 +1,254 @@
+{
+  "name": "DevOps & AI Learning 2026",
+  "children": [
+    {
+      "name": "Hands-on Practice Labs",
+      "children": [
+        {
+          "name": "Top Platforms",
+          "children": [
+            {
+              "name": "KodeKloud Labs"
+            },
+            {
+              "name": "iximiuz Labs"
+            },
+            {
+              "name": "KillerCoda"
+            },
+            {
+              "name": "AWS Skill Builder"
+            },
+            {
+              "name": "SadServers"
+            },
+            {
+              "name": "Prepare.sh"
+            },
+            {
+              "name": "Pluralsight Labs"
+            },
+            {
+              "name": "Educative Labs"
+            }
+          ]
+        },
+        {
+          "name": "Free Browser Tools",
+          "children": [
+            {
+              "name": "Play with Docker"
+            },
+            {
+              "name": "Play with Kubernetes"
+            },
+            {
+              "name": "GitHub Codespaces"
+            },
+            {
+              "name": "Google Cloud Shell"
+            },
+            {
+              "name": "Katacoda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Certifications",
+      "children": [
+        {
+          "name": "DevOps Core",
+          "children": [
+            {
+              "name": "AWS Certified DevOps - Pro"
+            },
+            {
+              "name": "Certified Kubernetes Administrator"
+            },
+            {
+              "name": "Docker Certified Associate"
+            },
+            {
+              "name": "Microsoft Certified: DevOps Expert"
+            },
+            {
+              "name": "Puppet Certified Professional"
+            }
+          ]
+        },
+        {
+          "name": "AI & Machine Learning",
+          "children": [
+            {
+              "name": "AWS ML Engineer - Associate"
+            },
+            {
+              "name": "AWS AI Practitioner"
+            },
+            {
+              "name": "AWS Generative AI Developer - Pro"
+            },
+            {
+              "name": "IBM Applied DevOps Engineering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2026 Learning Roadmap",
+      "children": [
+        {
+          "name": "Stage 1: Foundations",
+          "children": [
+            {
+              "name": "Linux Essentials"
+            },
+            {
+              "name": "Cloud Basics"
+            },
+            {
+              "name": "Git & GitHub"
+            },
+            {
+              "name": "Python & Scripting"
+            },
+            {
+              "name": "Containers 101"
+            }
+          ]
+        },
+        {
+          "name": "Stage 2: Modern DevOps",
+          "children": [
+            {
+              "name": "CI/CD Pipelines"
+            },
+            {
+              "name": "Infrastructure as Code"
+            },
+            {
+              "name": "Kubernetes Mastery"
+            }
+          ]
+        },
+        {
+          "name": "Stage 3: AI Integration",
+          "children": [
+            {
+              "name": "Predictive Troubleshooting"
+            },
+            {
+              "name": "Self-optimizing CI/CD"
+            },
+            {
+              "name": "Smart Cost Management"
+            },
+            {
+              "name": "AI-powered Security"
+            }
+          ]
+        },
+        {
+          "name": "Stage 4: Senior Impact",
+          "children": [
+            {
+              "name": "Platform Engineering"
+            },
+            {
+              "name": "GitOps Workflows"
+            },
+            {
+              "name": "Internal Developer Platforms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AI Engineering Technologies",
+      "children": [
+        {
+          "name": "Core Concepts",
+          "children": [
+            {
+              "name": "Retrieval-Augmented Generation"
+            },
+            {
+              "name": "AI Agents & Agentic AI"
+            },
+            {
+              "name": "Model Context Protocol"
+            },
+            {
+              "name": "Prompt Engineering"
+            }
+          ]
+        },
+        {
+          "name": "Tools & Frameworks",
+          "children": [
+            {
+              "name": "Amazon SageMaker"
+            },
+            {
+              "name": "LangChain & LangGraph"
+            },
+            {
+              "name": "CrewAI"
+            },
+            {
+              "name": "Vector Databases"
+            }
+          ]
+        },
+        {
+          "name": "Operations",
+          "children": [
+            {
+              "name": "MLOps"
+            },
+            {
+              "name": "LLMOps"
+            },
+            {
+              "name": "Model Monitoring"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Career Benefits",
+      "children": [
+        {
+          "name": "Salary Potential",
+          "children": [
+            {
+              "name": "Median: $141,000"
+            },
+            {
+              "name": "Range: $114k - $178k"
+            }
+          ]
+        },
+        {
+          "name": "Professional Value",
+          "children": [
+            {
+              "name": "Recognition & Leadership"
+            },
+            {
+              "name": "Marketability"
+            },
+            {
+              "name": "Future-proof Skills"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

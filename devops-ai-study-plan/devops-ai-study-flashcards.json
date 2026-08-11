@@ -1,0 +1,301 @@
+{
+  "title": "DevOps Flashcards",
+  "cards": [
+    {
+      "front": "Which browser-based playground provided by O'Reilly focuses on Docker, Kubernetes, and interactive terminal access?",
+      "back": "Katacoda"
+    },
+    {
+      "front": "The platform 'Play with Docker' provides free Docker instances for sessions lasting exactly _____ hours.",
+      "back": "$4$"
+    },
+    {
+      "front": "What specific cloud platform does Google Cloud Shell run on?",
+      "back": "Google Cloud Platform (GCP)"
+    },
+    {
+      "front": "Which GitHub feature provides a free Linux VM per repository for project-based learning using Docker?",
+      "back": "GitHub Codespaces"
+    },
+    {
+      "front": "What is the persistent disk storage capacity provided for free by Google Cloud Shell?",
+      "back": "$5$ GB"
+    },
+    {
+      "front": "Which interactive DevOps playground platform covers tools like Docker, Kubernetes, and Ansible?",
+      "back": "KodeKloud"
+    },
+    {
+      "front": "What is the median total pay for a DevOps engineer in the United States as of 2025?",
+      "back": "$\\$141,000$"
+    },
+    {
+      "front": "Which AWS certification validates the ability to implement and automate compliance validation, governance processes, and security controls?",
+      "back": "AWS Certified DevOps Engineer - Professional"
+    },
+    {
+      "front": "What is the recommended amount of experience for a professional seeking the AWS Certified DevOps Engineer - Professional credential?",
+      "back": "Two or more years working in AWS environments."
+    },
+    {
+      "front": "Which certification demonstrates an individual's ability to manage and configure production-grade clusters and perform basic installations in Kubernetes?",
+      "back": "Certified Kubernetes Administrator (CKA)"
+    },
+    {
+      "front": "The Docker Certified Associate (DCA) certification recommends that candidates have _____ to _____ months of experience using Docker.",
+      "back": "$6$ to $12$"
+    },
+    {
+      "front": "Which system management tool is the focus of the 'Puppet Certified Professional' exam for automating infrastructure changes?",
+      "back": "Puppet"
+    },
+    {
+      "front": "To earn the 'Microsoft Certified: DevOps Engineer Expert' certification, a candidate must first hold either the Azure Administrator Associate or the _____ certification.",
+      "back": "Azure Developer Associate"
+    },
+    {
+      "front": "What is the primary focus of iximiuz Labs compared to other guided DevOps platforms?",
+      "back": "Understanding Linux internals, networking, and how things work \"under the hood.\""
+    },
+    {
+      "front": "Which browser-based platform is specifically known for hosting the DevOpsCube CKA practice course labs?",
+      "back": "KillerCoda"
+    },
+    {
+      "front": "What is the maximum session duration for a free section in KillerCoda?",
+      "back": "$1$ hour"
+    },
+    {
+      "front": "Which learning platform offers text-based interactive courses with built-in cloud projects and an AI assistant for troubleshooting?",
+      "back": "Educative Labs"
+    },
+    {
+      "front": "The AWS Skill Builder 'Builder Labs' provide free access to approximately _____ foundational labs.",
+      "back": "$10$"
+    },
+    {
+      "front": "Which platform focuses on browser-based, hands-on Linux and DevOps troubleshooting challenges by providing 'broken' servers to fix?",
+      "back": "SadServers"
+    },
+    {
+      "front": "How many questions are included in the AWS Machine Learning Engineer - Associate (MLA-C01) exam?",
+      "back": "$85$ questions"
+    },
+    {
+      "front": "What is the total time allotted for the AWS Machine Learning Engineer - Associate (MLA-C01) exam?",
+      "back": "$170$ minutes"
+    },
+    {
+      "front": "Which Amazon service is the primary focus of the AWS Certified Machine Learning Engineer - Associate exam?",
+      "back": "Amazon SageMaker"
+    },
+    {
+      "front": "Which SageMaker tool is specifically used for data preparation and feature engineering with minimal code?",
+      "back": "SageMaker Data Wrangler"
+    },
+    {
+      "front": "In the AWS MLA-C01 exam, which tool is used to sort and manage different machine learning models?",
+      "back": "SageMaker Model Registry"
+    },
+    {
+      "front": "What are the four domains covered by the AWS Machine Learning Engineer - Associate exam?",
+      "back": "Data Preparation, Model Development, Deployment/Orchestration, and Monitoring/Maintenance/Security."
+    },
+    {
+      "front": "Identify the Amazon service used for sentiment analysis and redacting sensitive data in documents.",
+      "back": "Amazon Comprehend"
+    },
+    {
+      "front": "In AI Engineering, what does the acronym RAG stand for?",
+      "back": "Retrieval-Augmented Generation"
+    },
+    {
+      "front": "Which component of a RAG pipeline is used to perform semantic searches by storing embeddings?",
+      "back": "Vector Database"
+    },
+    {
+      "front": "Name one of the four vector database tools mentioned in the AI Engineering Resource Library.",
+      "back": "Pinecone (or Chroma, FAISS, pgvector)."
+    },
+    {
+      "front": "What is the primary difference between AI agents and simple LLM applications?",
+      "back": "AI agents use tools, memory, and multi-step workflows to achieve goals autonomously."
+    },
+    {
+      "front": "What does the Model Context Protocol (MCP) provide for AI agents?",
+      "back": "An open standard for connecting agents to tools, data sources, and APIs."
+    },
+    {
+      "front": "Which framework is used for building stateful, graph-based AI agent workflows?",
+      "back": "LangGraph"
+    },
+    {
+      "front": "What is the main purpose of LLMOps in production AI systems?",
+      "back": "The practices and tools for deploying, monitoring, and continuously improving LLM applications."
+    },
+    {
+      "front": "How does LLMOps differ from traditional MLOps regarding the development lifecycle?",
+      "back": "LLMOps focuses on prompt engineering and RAG evaluation rather than training models from scratch."
+    },
+    {
+      "front": "In the Technovids roadmap, what is the first sequence step for building AI engineering knowledge?",
+      "back": "Understanding the AI Engineering Guide (discipline and roles)."
+    },
+    {
+      "front": "Which tool is recommended for automating DevOps workflows with AI-driven triggers and notifications?",
+      "back": "n8n"
+    },
+    {
+      "front": "What is the primary function of the 'Claude Code' tool mentioned in the roadmaps?",
+      "back": "AI-assisted development and CLI-based AI tooling."
+    },
+    {
+      "front": "Which Kubernetes tool uses AI to troubleshoot clusters and explain errors?",
+      "back": "K8sGPT"
+    },
+    {
+      "front": "What are the two foundational levels of AI certifications offered by Microsoft and AWS in 2026?",
+      "back": "AWS Certified AI Practitioner and Microsoft Azure AI Fundamentals."
+    },
+    {
+      "front": "In the context of RAG, what is the purpose of 'reranking'?",
+      "back": "Improving the relevance of retrieved documents before passing them to the LLM."
+    },
+    {
+      "front": "What is the primary advantage of RAG over fine-tuning for enterprise data?",
+      "back": "It provides the model with up-to-date, specific context without the high cost of retraining."
+    },
+    {
+      "front": "Which AI framework is specifically compared to LangGraph for production agent deployment?",
+      "back": "CrewAI"
+    },
+    {
+      "front": "What is the name of the open standard for connecting AI agents to tools, APIs, and data sources?",
+      "back": "Model Context Protocol (MCP)"
+    },
+    {
+      "front": "Term: Prompt Engineering",
+      "back": "Definition: The practice of designing and refining inputs to LLMs to get specific, high-quality outputs."
+    },
+    {
+      "front": "What is the focus of the 'Agentic AI' concept?",
+      "back": "Systems designed to use multi-step reasoning, planning, and tool use to complete complex tasks."
+    },
+    {
+      "front": "In a RAG system, what is 'chunking'?",
+      "back": "The process of breaking large documents into smaller pieces for embedding and retrieval."
+    },
+    {
+      "front": "Which certification is specifically mentioned as retiring on August $25$, $2026$?",
+      "back": "AWS Certified Advanced Networking - Specialty"
+    },
+    {
+      "front": "What is the price of the AWS Machine Learning Engineer - Associate exam?",
+      "back": "$\\$150$ USD"
+    },
+    {
+      "front": "Which SageMaker deployment option is best for managing infrastructure behind endpoints for real-time traffic?",
+      "back": "SageMaker Inference"
+    },
+    {
+      "front": "Under the KodeKloud roadmap, Stage 1 focuses on which core technical foundations?",
+      "back": "Linux, Cloud basics, Git, Python/Bash, and Containers."
+    },
+    {
+      "front": "What is the purpose of the 'Backstage' tool in Stage $4$ of the DevOps roadmap?",
+      "back": "Building Internal Developer Platforms (IDPs)."
+    },
+    {
+      "front": "Which specific certification is recommended for demonstrating expertise in generative AI solutions using Amazon Bedrock?",
+      "back": "AWS Certified Generative AI Developer - Professional"
+    },
+    {
+      "front": "The 'Hobbyist' plan on SadServers is _____, while the 'Pro' plan costs $\\$9$ per month.",
+      "back": "Free"
+    },
+    {
+      "front": "According to Coursera, DevOps engineers earn total median salaries ranging from _____ to _____.",
+      "back": "$\\$114,000$ to $\\$178,000$"
+    },
+    {
+      "front": "What concept refers to the use of an LLM to grade the output of another LLM?",
+      "back": "LLM-as-judge"
+    },
+    {
+      "front": "Which AI engineering role specifically covers the lifecycle of deploying and monitoring production LLM apps?",
+      "back": "LLMOps Engineer"
+    },
+    {
+      "front": "Which lab platform provides a 'free $13$-hour crash course' for absolute Kubernetes beginners?",
+      "back": "Coursera (in partnership with Mumshad Mannambeth/KodeKloud)."
+    },
+    {
+      "front": "What is the primary role of a 'Vector Database' in the context of semantic search?",
+      "back": "To store and query high-dimensional vector representations of data (embeddings)."
+    },
+    {
+      "front": "In the Technovids Resource Library, how many resources are organized across AI engineering careers and training?",
+      "back": "$32$"
+    },
+    {
+      "front": "What is the term for the protocol that connects AI agents to local desktop extensions or remote custom servers?",
+      "back": "MCP (Model Context Protocol)"
+    },
+    {
+      "front": "In the AWS MLA-C01 exam, what concept describes a model that performs well on training data but poorly on new, unseen data?",
+      "back": "Overfitting"
+    },
+    {
+      "front": "Which Amazon SageMaker feature is used to fine-tune pre-built models with proprietary data?",
+      "back": "Amazon Bedrock (specifically within the generative AI context)."
+    },
+    {
+      "front": "What is the goal of 'Stage $3$' in the AI-powered roadmap for DevOps engineers?",
+      "back": "Integrating AI into daily engineering work (troubleshooting, templates, security)."
+    },
+    {
+      "front": "Which term describes a statement where a key term is blanked out to test memory recall?",
+      "back": "Cloze Deletion"
+    },
+    {
+      "front": "Which certification validates expertise in DevOps processes, specifically focusing on people, processes, and technologies?",
+      "back": "Microsoft Certified: DevOps Engineer Expert"
+    },
+    {
+      "front": "In KillerCoda, what button allows a user to verify if their hands-on terminal work is correct?",
+      "back": "Validation button"
+    },
+    {
+      "front": "What is the main goal of the 'SadServers' platform?",
+      "back": "To improve debugging and troubleshooting skills by fixing 'sad' (broken) servers."
+    },
+    {
+      "front": "Which domain of the MLA-C01 exam includes 'ML Solution Monitoring, Maintenance, and Security'?",
+      "back": "Domain $4$"
+    },
+    {
+      "front": "In the context of AI agents, what is meant by 'planning'?",
+      "back": "The agent's ability to break down a complex request into a series of logical, executable steps."
+    },
+    {
+      "front": "According to the sources, why are DevOps tutorials often not enough for learners?",
+      "back": "They provide structured implementation but often lack the hands-on troubleshooting needed for real scenarios."
+    },
+    {
+      "front": "Which specific AI framework uses 'nodes' and 'edges' to define stateful agent workflows?",
+      "back": "LangGraph"
+    },
+    {
+      "front": "What is the primary difference between a 'Playground' and a 'Structured Lab' on KodeKloud?",
+      "back": "Playgrounds are open environments without fixed tasks, while labs have step-by-step guided challenges."
+    },
+    {
+      "front": "Which tool provides a free Linux VM in the browser and integrates with Google Cloud Platform services?",
+      "back": "Google Cloud Shell"
+    },
+    {
+      "front": "Which certification is considered the leading container runtime platform validation for DevOps engineers?",
+      "back": "Docker Certified Associate (DCA)"
+    }
+  ]
+}

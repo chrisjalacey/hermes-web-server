@@ -1,0 +1,265 @@
+{
+  "title": "DevOps Quiz",
+  "questions": [
+    {
+      "question": "In the context of the 2026 roadmap for Cloud and DevOps engineers, which skills are considered part of the foundational stage before integrating AI?",
+      "answerOptions": [
+        {
+          "text": "Linux essentials, Git, and containerization",
+          "isCorrect": true,
+          "rationale": "These core technologies provide the necessary environment and version control understanding required to manage the systems that AI will later automate."
+        },
+        {
+          "text": "Retrieval-Augmented Generation (RAG) and LLM fine-tuning",
+          "isCorrect": false,
+          "rationale": "While critical for AI-powered workflows, these are advanced stages that build upon a solid understanding of infrastructure and code."
+        },
+        {
+          "text": "Prompt Engineering and Model Context Protocol (MCP)",
+          "isCorrect": false,
+          "rationale": "These skills focus on the interaction with AI models rather than the underlying technical environment of an engineer."
+        },
+        {
+          "text": "Neural network architecture and data science mathematics",
+          "isCorrect": false,
+          "rationale": "Modern DevOps roadmaps emphasize using AI as a tool rather than building or training the underlying models from scratch."
+        }
+      ],
+      "hint": "Consider the core, non-AI technical skills that traditionally define the starting point of a systems engineering career."
+    },
+    {
+      "question": "What is the primary purpose of the Model Context Protocol (MCP) within the AI engineering ecosystem?",
+      "answerOptions": [
+        {
+          "text": "To provide an open standard for connecting AI agents to tools, data sources, and APIs",
+          "isCorrect": true,
+          "rationale": "This protocol facilitates seamless communication between AI models and external resources, enabling them to perform actions in real-world environments."
+        },
+        {
+          "text": "To serve as a high-performance vector database for storing document embeddings",
+          "isCorrect": false,
+          "rationale": "Protocols define how data and instructions are shared, whereas databases are used for the actual storage and retrieval of that data."
+        },
+        {
+          "text": "To replace the need for prompt engineering by using automated model weights",
+          "isCorrect": false,
+          "rationale": "Prompting remains necessary to guide the model's behavior, even when it is connected to external tools through standardized protocols."
+        },
+        {
+          "text": "To encrypt LLM communications to prevent prompt injection attacks",
+          "isCorrect": false,
+          "rationale": "While security is a concern in AI, this specific standard focuses on interoperability and connectivity rather than encryption."
+        }
+      ],
+      "hint": "Think about how an AI agent might be granted the ability to interact with a third-party application or database."
+    },
+    {
+      "question": "According to the provided materials, what is a key difference between reactive and predictive troubleshooting in a DevOps environment powered by AI?",
+      "answerOptions": [
+        {
+          "text": "Predictive systems analyze patterns to warn of issues before performance drops occur",
+          "isCorrect": true,
+          "rationale": "By utilizing logs and metrics to identify anomalies, AI can forecast potential failures rather than waiting for an alert to trigger after the fact."
+        },
+        {
+          "text": "Reactive systems use AI to fix bugs automatically as soon as they are detected",
+          "isCorrect": false,
+          "rationale": "Detection and automated fixing are different steps; traditional reactive systems simply respond to an existing error state."
+        },
+        {
+          "text": "Predictive troubleshooting requires a full migration to serverless architectures",
+          "isCorrect": false,
+          "rationale": "Forecasting performance issues can be applied to any infrastructure type, including legacy on-premises or traditional cloud VMs."
+        },
+        {
+          "text": "Reactive systems focus exclusively on hardware failures while predictive systems focus on code",
+          "isCorrect": false,
+          "rationale": "Both methodologies can address the entire stack, from hardware health to application-level software bugs."
+        }
+      ],
+      "hint": "Focus on the timing of the intervention relative to the actual occurrence of a system outage."
+    },
+    {
+      "question": "When preparing for the AWS Machine Learning Engineer - Associate (MLA-C01) exam, which service is emphasized as the core 'integrated family' for the ML lifecycle?",
+      "answerOptions": [
+        {
+          "text": "Amazon SageMaker",
+          "isCorrect": true,
+          "rationale": "This service has evolved into a comprehensive suite of tools for building, training, deploying, and monitoring machine learning models on AWS."
+        },
+        {
+          "text": "AWS Lambda",
+          "isCorrect": false,
+          "rationale": "While used for serverless computing, it serves as a general-purpose execution environment rather than a specialized ML development platform."
+        },
+        {
+          "text": "Amazon Bedrock",
+          "isCorrect": false,
+          "rationale": "This is a managed service specifically for generative AI and foundation models, representing only a subset of the broader ML engineering scope."
+        },
+        {
+          "text": "AWS Glue",
+          "isCorrect": false,
+          "rationale": "This service is primarily focused on data integration and ETL processes, acting as a precursor to the actual ML modeling phase."
+        }
+      ],
+      "hint": "Identify the primary AWS platform that handles everything from data preparation to model hosting."
+    },
+    {
+      "question": "What is the specific time limit for a free lab session on 'Play with Docker' as mentioned in the learning resources?",
+      "answerOptions": [
+        {
+          "text": "$4$ hours",
+          "isCorrect": true,
+          "rationale": "This duration is standard for their browser-based sessions, providing a window for testing containers without permanent infrastructure costs."
+        },
+        {
+          "text": "$1$ hour",
+          "isCorrect": false,
+          "rationale": "Some platforms like the free tier of KodeKloud or KillerCoda use this limit, but Play with Docker offers a more extended session."
+        },
+        {
+          "text": "$30$ minutes",
+          "isCorrect": false,
+          "rationale": "This short duration would likely be insufficient for complex container orchestration tasks or multi-node cluster testing."
+        },
+        {
+          "text": "$24$ hours",
+          "isCorrect": false,
+          "rationale": "Extended sessions would consume significant resources, making them rare for free, publicly accessible terminal playgrounds."
+        }
+      ],
+      "hint": "The time allocated is equivalent to a half-day working session."
+    },
+    {
+      "question": "Which prerequisite is required to obtain the Microsoft Certified: DevOps Engineer Expert credential?",
+      "answerOptions": [
+        {
+          "text": "Azure Administrator Associate or Azure Developer Associate",
+          "isCorrect": true,
+          "rationale": "Candidates must demonstrate foundational proficiency in either administration or development within the Azure ecosystem before specializing in DevOps."
+        },
+        {
+          "text": "Microsoft 365 Fundamentals",
+          "isCorrect": false,
+          "rationale": "Fundamentals certifications provide broad overviews but do not offer the technical depth in cloud infrastructure required for expert-level DevOps."
+        },
+        {
+          "text": "Certified Kubernetes Administrator (CKA)",
+          "isCorrect": false,
+          "rationale": "While valuable, this is a vendor-neutral certification from the Linux Foundation and is not a prerequisite for Microsoft's specific path."
+        },
+        {
+          "text": "Azure Solutions Architect Expert",
+          "isCorrect": false,
+          "rationale": "This is a parallel expert-level certification rather than a prerequisite leading into the DevOps specialty."
+        }
+      ],
+      "hint": "You must first be certified as an associate in either the 'management' or 'creation' side of the Microsoft cloud platform."
+    },
+    {
+      "question": "In the context of Retrieval-Augmented Generation (RAG), what is the primary role of a Vector Database?",
+      "answerOptions": [
+        {
+          "text": "To store and retrieve document embeddings for semantic search",
+          "isCorrect": true,
+          "rationale": "Vector databases enable the system to find relevant information by comparing the mathematical representations of queries and source data."
+        },
+        {
+          "text": "To execute the final LLM prompt and generate the user's response",
+          "isCorrect": false,
+          "rationale": "The generation of text is handled by the large language model itself, not by the database used for information retrieval."
+        },
+        {
+          "text": "To fine-tune the weights of the foundation model on proprietary data",
+          "isCorrect": false,
+          "rationale": "Fine-tuning involves retraining model parameters, whereas RAG focuses on providing the model with external context at inference time."
+        },
+        {
+          "text": "To convert natural language into Python code for API calls",
+          "isCorrect": false,
+          "rationale": "This process, known as tool-calling or code generation, is a capability of the model rather than a storage function of a database."
+        }
+      ],
+      "hint": "Consider how the system identifies the most relevant piece of documentation to feed into the prompt."
+    },
+    {
+      "question": "Which platform is specifically recommended for practicing 'how things really work under the hood' regarding Linux internals and networking?",
+      "answerOptions": [
+        {
+          "text": "iximiuz Labs",
+          "isCorrect": true,
+          "rationale": "This platform emphasizes experimentation with Linux and Kubernetes internals, focusing on deep technical understanding over guided step-by-step tasks."
+        },
+        {
+          "text": "GitHub Codespaces",
+          "isCorrect": false,
+          "rationale": "Codespaces provides a development environment for coding projects but is not specifically tailored for operating system troubleshooting."
+        },
+        {
+          "text": "Google Cloud Shell",
+          "isCorrect": false,
+          "rationale": "This is a utility tool for managing GCP resources rather than a dedicated educational playground for kernel-level internals."
+        },
+        {
+          "text": "Katacoda",
+          "isCorrect": false,
+          "rationale": "Now part of O'Reilly, this platform is known for structured, guided tutorials rather than deep, open-ended internal experimentation."
+        }
+      ],
+      "hint": "This platform was described as a KodeKloud alternative for those wanting to dive into networking and kernel internals."
+    },
+    {
+      "question": "The AWS Certified Machine Learning Engineer - Associate exam includes which set of question formats beyond simple multiple-choice?",
+      "answerOptions": [
+        {
+          "text": "Ordering, matching, and case studies",
+          "isCorrect": true,
+          "rationale": "AWS has introduced these more interactive question types to better test the practical application of architectural and procedural knowledge."
+        },
+        {
+          "text": "Hands-on coding in a live IDE and verbal interviews",
+          "isCorrect": false,
+          "rationale": "While some specialized assessments use live environments, standard AWS associate exams remain computerized tests with structured question types."
+        },
+        {
+          "text": "True/False and short-form essay responses",
+          "isCorrect": false,
+          "rationale": "AWS exams avoid essay-style grading to maintain consistency and rely on objective, machine-gradable formats."
+        },
+        {
+          "text": "Fill-in-the-blank and video-based scenario analysis",
+          "isCorrect": false,
+          "rationale": "These formats are not standard for the current AWS certification catalog, which prefers multiple-selection and matching exercises."
+        }
+      ],
+      "hint": "Consider formats that require you to organize steps or evaluate a detailed business scenario."
+    },
+    {
+      "question": "What distinguishes an AI 'Agent' from a simple Large Language Model (LLM) application in the 2026 engineering roadmap?",
+      "answerOptions": [
+        {
+          "text": "The ability to plan, use tools, and call functions to execute tasks",
+          "isCorrect": true,
+          "rationale": "Agents are designed to be autonomous, using the model as a reasoning engine to interact with the external world through predefined actions."
+        },
+        {
+          "text": "The use of a higher parameter count to ensure faster response times",
+          "isCorrect": false,
+          "rationale": "Speed and size are characteristics of the model itself, not the architectural framework that defines how the model is used."
+        },
+        {
+          "text": "The requirement for a GPU to be present on the client machine",
+          "isCorrect": false,
+          "rationale": "Most agentic workflows interact with models hosted in the cloud, removing the need for local high-performance hardware."
+        },
+        {
+          "text": "The ability to only respond in pre-written templates and static scripts",
+          "isCorrect": false,
+          "rationale": "This describes traditional automation; agents are distinct because they can dynamically adapt their plan based on intermediate results."
+        }
+      ],
+      "hint": "Think about the level of autonomy and the ability to interact with external software."
+    }
+  ]
+}
