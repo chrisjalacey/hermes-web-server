@@ -1,0 +1,48 @@
+# .htaccess - Additional protection for Bilbao & Basque Country Guide
+# Prevents indexing and AI scraping via server-level directives
+
+# Prevent directory listing
+Options -Indexes
+
+# Block AI scrapers and bots via User-Agent
+SetEnvIfNoCase User-Agent "GPTBot" bad_bot
+SetEnvIfNoCase User-Agent "ChatGPT-User" bad_bot
+SetEnvIfNoCase User-Agent "CCBot" bad_bot
+SetEnvIfNoCase User-Agent "anthropic-ai" bad_bot
+SetEnvIfNoCase User-Agent "Claude-Web" bad_bot
+SetEnvIfNoCase User-Agent "ClaudeBot" bad_bot
+SetEnvIfNoCase User-Agent "PerplexityBot" bad_bot
+SetEnvIfNoCase User-Agent "YouBot" bad_bot
+SetEnvIfNoCase User-Agent "Google-Extended" bad_bot
+SetEnvIfNoCase User-Agent "Diffbot" bad_bot
+SetEnvIfNoCase User-Agent "Bytespider" bad_bot
+SetEnvIfNoCase User-Agent "OmniExplorer_Bot" bad_bot
+SetEnvIfNoCase User-Agent "PetalBot" bad_bot
+SetEnvIfNoCase User-Agent "SemrushBot" bad_bot
+SetEnvIfNoCase User-Agent "AhrefsBot" bad_bot
+SetEnvIfNoCase User-Agent "MJ12bot" bad_bot
+SetEnvIfNoCase User-Agent "DotBot" bad_bot
+SetEnvIfNoCase User-Agent "SeznamBot" bad_bot
+SetEnvIfNoCase User-Agent "YandexBot" bad_bot
+SetEnvIfNoCase User-Agent "Baiduspider" bad_bot
+
+<RequireAll>
+    Require all granted
+    Require not env bad_bot
+</RequireAll>
+
+# Add noindex header to all HTML files
+<FilesMatch "\.html$">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet, noai, notraining"
+</FilesMatch>
+
+# Add noindex header to all files
+<FilesMatch ".*">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</FilesMatch>
+
+# Prevent hotlinking (optional)
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://your-domain\.com/.*$ [NC]
+RewriteRule \.(jpg|jpeg|png|gif|svg|webp|pdf)$ - [F,NC,L]
