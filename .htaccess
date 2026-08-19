@@ -4,6 +4,15 @@
 # Prevent directory listing
 Options -Indexes
 
+# Block access to .git directory and all its contents
+<DirectoryMatch "^\.git">
+    Require all denied
+</DirectoryMatch>
+<FilesMatch "^\.git">
+    Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+
 # Block AI scrapers and bots via User-Agent
 SetEnvIfNoCase User-Agent "GPTBot" bad_bot
 SetEnvIfNoCase User-Agent "ChatGPT-User" bad_bot
