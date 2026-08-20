@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Sebastián Pintxos Bars — Restaurant Guide</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #2d2d2d; max-width: 1000px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+        .badge-gf-safe { background: #c8e6c9; color: #1b5e20; border: 1px solid #a5d6a7; }
+        .badge-gf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-pescatarian { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-tourist { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .restaurant-card { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 24px; margin-bottom: 24px; }
+        .restaurant-header { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .restaurant-name { font-size: 1.25rem; font-weight: 600; color: #1a1a2e; flex: 1; min-width: 200px; }
+        .restaurant-rating { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 6px 12px; font-weight: 600; color: #f5a623; display: flex; align-items: center; gap: 4px; }
+        .restaurant-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; font-size: 0.9rem; }
+        .meta-item { background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .meta-label { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .meta-value { color: #333; font-weight: 500; }
+        .dietary-badges { margin-bottom: 16px; }
+        .signature-dishes { background: #f0f7ff; border-left: 3px solid #0066cc; padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; }
+        .signature-dishes strong { color: #1a1a2e; }
+        .practical-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.9rem; color: #555; }
+        .practical-item { background: #fff; padding: 12px; border-radius: 8px; border: 1px solid #eee; }
+        .practical-label { color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        .hours-sat { background: #e8f5e9; color: #2e7d32; padding: 8px 12px; border-radius: 6px; font-weight: 600; display: inline-block; margin-bottom: 8px; font-size: 0.9rem; }
+        .note-closed { background: #fff3e0; color: #e65100; padding: 8px 12px; border-radius: 6px; font-weight: 600; display: inline-block; margin-bottom: 8px; font-size: 0.9rem; }
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } .restaurant-meta { grid-template-columns: 1fr; } .practical-info { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Restaurant Guide</a>
+    <h1>🍢 San Sebastián Pintxos Bars — Parte Vieja & Beyond</h1>
+    <p class="subtitle">Classic and creative pintxos in Donostia's Old Town — verified for Saturday August 15 (Semana Grande finale)</p>
+
+    <div class="section">
+        <div class="restaurant-card" id="bar-martinez">
+            <div class="restaurant-header">
+                <span class="restaurant-name">BAR MARTÍNEZ</span>
+                <span class="restaurant-rating">⭐ 4.6 (1,500+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: 12:00–16:00 & 19:00–23:00</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">31 de Agosto, 13 — Parte Vieja, Donostia/San Sebastián</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Traditional Pintxos (oldest family-run bar in Parte Vieja)</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€ (Moderate)</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Mon 12:00–16:00; Tue–Sun 12:00–16:00 & 19:00–23:00</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins only; queue expected at peak</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (31 de Agosto)</div></div>
+                <div class="meta-item"><div class="meta-label">Website</div><div class="meta-value"><a href="https://www.barmartinezdonosti.com/" target="_blank" style="color:#0066cc;">barmartinezdonosti.com</a></div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Historic 9-metre bar, oldest family-run in Parte Vieja <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Pimiento relleno de bonito (piquillo pepper stuffed with tuna tartar, sherry vinegar, olive oil), classic Gilda (anchovy, olive, guindilla pepper)</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Many pintxos naturally GF; ask about fryer cross-contamination</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Excellent — tuna, anchovy, seafood-forward</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 2 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="la-cuchara-san-telmo">
+            <div class="restaurant-header">
+                <span class="restaurant-name">LA CUCHARA DE SAN TELMO</span>
+                <span class="restaurant-rating">⭐ 4.7 (3,200+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: 12:30–15:30 & 19:30–23:30</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Santa Korda Kalea, 4 (or Calle 31 de Agosto, 28) — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Creative/Modern Pintxos — famous for Foie a la Plancha</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€–€€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Mon Closed; Tue 19:30–23:30; Wed–Sun 12:30–15:30 & 19:30–23:30</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins only; legendary queue (arrive 30+ min early)</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (near San Telmo Museum)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Iconic modern pintxos, famous queue, foie gras specialists <span class="badge badge-local">Local Favourite</span> <span class="badge badge-tourist">Popular</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Foie a la Plancha (seared foie gras with Basque cider reduction), caramelized pork cheeks, seasonal mushroom pintxos, Gilda</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Many grilled items naturally GF; ask about sauces</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Good — some seafood pintxos, but meat-heavy</div></div>
+                <div class="practical-item"><div class="practical-label">Queue Strategy</div><div class="practical-value">Arrive by 11:20 for 12:30 opening; they take names</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 3 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="la-vina-donosti">
+            <div class="restaurant-header">
+                <span class="restaurant-name">LA VIÑA</span>
+                <span class="restaurant-rating">⭐ 4.6 (4,500+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: OPEN (12:00–23:00)</div>
+            <div class="note-closed">🔴 CLOSED MONDAYS</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">31 de Agosto, 7 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Traditional Pintxos — famous for burnt Basque cheesecake</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Tue–Sun 12:00–23:00; Mon CLOSED</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins; queue at peak</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (31 de Agosto)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Family-run, burnt cheesecake mecca <span class="badge badge-local">Local Favourite</span> <span class="badge badge-tourist">Iconic</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">Limited GF</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Burnt Basque cheesecake (tarta de queso) — served in two thin slivers, Gilda, txangurro (spider crab), jamón ibérico</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Limited — cheesecake contains flour; ask about grilled items</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Moderate — some anchovy/seafood pintxos</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 2 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="gandarias">
+            <div class="restaurant-header">
+                <span class="restaurant-name">GANDARIAS</span>
+                <span class="restaurant-rating">⭐ 4.5 (2,500+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: OPEN 11:00–00:30 (kitchen 11:00–24:00)</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">31 de Agosto, 23 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Classic Traditional Pintxos</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Daily 11:00–00:30 (kitchen 11:00–24:00)</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins; arrive early</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (31 de Agosto)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Classic, no-frills, local institution <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Txangurro (spider crab), grilled mushrooms, morcilla (blood sausage), grilled prawns, tortilla de patatas</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Many grilled items naturally GF</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Good — grilled seafood options</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 2 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="bar-txepetxa">
+            <div class="restaurant-header">
+                <span class="restaurant-name">BAR TXEPETXA</span>
+                <span class="restaurant-rating">⭐ 4.6 (1,800+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: OPEN (siesta hours apply)</div>
+            <div class="note-closed">🔴 CLOSED MONDAYS</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Calle Pescadería, 5 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Specialist: Anchovies & Caviar (modern/creative)</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€–€€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Tue–Sat 12:30–15:30 & 19:30–23:00; Sun–Mon Closed</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins; small space, queue likely</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (Pescadería)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Anchovy specialists, creative toppings <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓✓✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Anchovy pintxos (12+ variations: smoked, cured, marinated, with quince, foie, caviar), Gilda variations</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Most anchovy pintxos naturally GF (no bread base)</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Exceptional — anchovy specialist</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 3 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="bar-nestor">
+            <div class="restaurant-header">
+                <span class="restaurant-name">BAR NESTOR</span>
+                <span class="restaurant-rating">⭐ 4.6 (2,200+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: 13:00–15:30 & 19:30–22:30</div>
+            <div class="note-closed">🔴 CLOSED SUN–MON</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Calle Pescadería, 11 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Ultra-traditional: Tortilla, Txuleta, Pimientos</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€€ (Txuleta €30+/kg)</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Tue–Sat 13:00–15:30 & 19:30–22:30; Sun–Mon Closed</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins only; famous for tortilla queue</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (Pescadería)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Tiny bar, legendary tortilla de patatas & txuleta <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Friendly (tortilla, peppers, steak)</span>
+                <span class="badge badge-pescatarian">Limited (steak-focused)</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Tortilla de patatas (runny, made to order — limited daily), Txuleta (grilled ribeye), Pimientos de Padrón</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Tortilla, peppers, steak naturally GF</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Limited — tortilla & peppers only</div></div>
+                <div class="practical-item"><div class="practical-label">Tortilla Timing</div><div class="practical-value">Made fresh 2x daily; arrive 30 min before service (13:00 or 19:30)</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 3 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="bar-sport">
+            <div class="restaurant-header">
+                <span class="restaurant-name">BAR SPORT</span>
+                <span class="restaurant-rating">⭐ 4.5 (2,800+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: 10:00–23:00</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Calle San Marcial, 10 (Fermín Calbetón Kalea) — Parte Vieja (near Plaza de la Constitución)</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Ultra-simple traditional: Jamón, Tortilla, Wine</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Mon–Fri 9:00–23:00; Sat 10:00–23:00; Sun 10:00–23:00</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins only</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (near Constitution Square)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Ultra-simple, standing room only, jamón & wine <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Friendly</span>
+                <span class="badge badge-pescatarian">Limited</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Jamón ibérico (hand-carved), tortilla de patatas, house red wine (served in porrón), Gilda</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Jamón, tortilla, wine naturally GF</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Limited — tortilla only</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 2 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="casa-alcalde">
+            <div class="restaurant-header">
+                <span class="restaurant-name">CASA ALCALDE</span>
+                <span class="restaurant-rating">⭐ 4.5 (1,200+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: OPEN 12:00–23:00</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Mayor Kalea, 19 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Traditional Pintxos & Raciones</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Daily 12:00–23:00</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins; some tables reservable</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (Mayor Kalea)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Traditional family-run, generous raciones <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Grilled squid, txangurro, morcilla de Burgos, grilled prawns, tortilla, house wine</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Grilled items naturally GF</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Good — squid, prawns, txangurro</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 4 min walk</div></div>
+            </div>
+        </div>
+
+        <div class="restaurant-card" id="bar-baztan">
+            <div class="restaurant-header">
+                <span class="restaurant-name">BAR BAZTAN</span>
+                <span class="restaurant-rating">⭐ 4.5 (900+ reviews)</span>
+            </div>
+            <div class="hours-sat">🟢 SATURDAY: OPEN 12:00–23:00</div>
+            <div class="restaurant-meta">
+                <div class="meta-item"><div class="meta-label">Address</div><div class="meta-value">Portu Kalea, 8 — Parte Vieja</div></div>
+                <div class="meta-item"><div class="meta-label">Cuisine</div><div class="meta-value">Wide selection traditional & modern pintxos</div></div>
+                <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">€€</div></div>
+                <div class="meta-item"><div class="meta-label">Hours</div><div class="meta-value">Daily 12:00–23:00</div></div>
+                <div class="meta-item"><div class="meta-label">Reservations</div><div class="meta-value">Walk-ins</div></div>
+                <div class="meta-item"><div class="meta-label">Neighbourhood</div><div class="meta-value">Parte Vieja (Portu Kalea)</div></div>
+                <div class="meta-item"><div class="meta-label">Vibe</div><div class="meta-value">Wide selection, good value <span class="badge badge-local">Local Favourite</span></div></div>
+            </div>
+            <div class="dietary-badges">
+                <span class="badge badge-gf">GF Aware</span>
+                <span class="badge badge-pescatarian">Pescatarian ✓</span>
+            </div>
+            <div class="signature-dishes"><strong>Signature dishes:</strong> Varied daily selection, grilled fish, tortilla, seasonal vegetables, house wines</div>
+            <div class="practical-info">
+                <div class="practical-item"><div class="practical-label">GF Details</div><div class="practical-value">Ask staff — many grilled options</div></div>
+                <div class="practical-item"><div class="practical-label">Pescatarian</div><div class="practical-value">Good variety</div></div>
+                <div class="practical-item"><div class="practical-label">Distance from Bilbao</div><div class="practical-value">~100 km / 1h 5 min drive (GI-20)</div></div>
+                <div class="practical-item"><div class="practical-label">Transport from Illunbe P+R</div><div class="practical-value">Bus Line 28 to "Centro" stop — 4 min walk</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📍 San Sebastián Pintxos — Area Summary (Saturday August 15)</h2>
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead><tr style="background:#f5f5f5;"><th style="padding:12px;text-align:left;">Venue</th><th style="padding:12px;text-align:left;">Street/Area</th><th style="padding:12px;text-align:left;">Saturday Hours</th><th style="padding:12px;text-align:left;">Specialty</th><th style="padding:12px;text-align:left;">GF Level</th><th style="padding:12px;text-align:left;">Pescatarian</th><th style="padding:12px;text-align:left;">Closed</th></tr></thead>
+            <tbody>
+                <tr><td>BAR MARTÍNEZ</td><td>31 de Agosto</td><td>12–16 & 19–23</td><td>Pimiento relleno, Gilda</td><td>GF Aware</td><td>✓✓</td><td>—</td></tr>
+                <tr><td>LA CUCHARA DE SAN TELMO</td><td>Santa Korda / 31 de Agosto</td><td>12:30–15:30 & 19:30–23:30</td><td>Foie a la Plancha</td><td>GF Aware</td><td>✓✓</td><td>Mon</td></tr>
+                <tr><td>LA VIÑA</td><td>31 de Agosto</td><td>12:00–23:00</td><td>Burnt Cheesecake</td><td>Limited GF</td><td>✓</td><td>Mon</td></tr>
+                <tr><td>GANDARIAS</td><td>31 de Agosto</td><td>11:00–00:30</td><td>Txangurro, Grilled</td><td>GF Aware</td><td>✓</td><td>—</td></tr>
+                <tr><td>BAR TXEPETXA</td><td>Pescadería</td><td>12:30–15:30 & 19:30–23:00</td><td>Anchovy Specialist</td><td>GF Aware</td><td>✓✓✓</td><td>Mon</td></tr>
+                <tr><td>BAR NESTOR</td><td>Pescadería</td><td>13:00–15:30 & 19:30–22:30</td><td>Tortilla, Txuleta</td><td>GF Friendly</td><td>Limited</td><td>Sun–Mon</td></tr>
+                <tr><td>BAR SPORT</td><td>San Marcial</td><td>10:00–23:00</td><td>Jamón, Tortilla, Wine</td><td>GF Friendly</td><td>Limited</td><td>—</td></tr>
+                <tr><td>CASA ALCALDE</td><td>Mayor Kalea</td><td>12:00–23:00</td><td>Traditional Raciones</td><td>GF Aware</td><td>✓</td><td>—</td></tr>
+                <tr><td>BAR BAZTAN</td><td>Portu Kalea</td><td>12:00–23:00</td><td>Wide Selection</td><td>GF Aware</td><td>✓</td><td>—</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🗺️ Pintxos Crawl Strategy for Your Day Trip (Aug 15)</h2>
+        <div class="restaurant-card" style="background:#e8f5e9;border-left:4px solid #2e7d32;">
+            <h3 style="margin-top:0;color:#2e7d32;">🎯 Optimized Route from Illunbe P+R (Bus Line 28 → "Centro")</h3>
+            <ol style="line-height:2;">
+                <li><strong>09:50</strong> Arrive "Centro" stop → <strong>2 min walk</strong> to <strong>La Concha</strong> beach</li>
+                <li><strong>10:00–11:30</strong> Coffee & Gilda at <strong>Bar Sport</strong> (Plaza Constitución) or <strong>Café Bar Bilbao</strong> (Plaza Nueva) — early, before crowds</li>
+                <li><strong>11:20–12:30</strong> Queue for <strong>La Cuchara de San Telmo</strong> — arrive by <strong>11:20</strong> for 12:30 opening (queue forms early)</li>
+                <li><strong>12:30–14:00</strong> <strong>La Cuchara</strong> — Foie a la Plancha, caramelized pork cheeks</li>
+                <li><strong>14:00–15:30</strong> Pintxos crawl <strong>31 de Agosto</strong>: <strong>Bar Martínez</strong> → <strong>Gandarias</strong> → <strong>La Viña</strong> (cheesecake)</li>
+                <li><strong>15:30–17:00</strong> <strong>Pescadería street</strong>: <strong>Bar Txepetxa</strong> (anchovies) → <strong>Bar Nestor</strong> (tortilla at 15:30 sharp!) → <strong>Casa Alcalde</strong> / <strong>Bar Baztan</strong></li>
+                <li><strong>17:00–19:30</strong> Break / beach / Mont Urgull</li>
+                <li><strong>19:30–22:00</strong> Evening pintxos: <strong>Bar Martínez</strong> (revisit) → <strong>La Cuchara</strong> evening session (arrive 19:00) → <strong>Bar Txepetxa</strong> evening</li>
+                <li><strong>22:30</strong> <strong>Semana Grande Fireworks</strong> over La Concha</li>
+                <li><strong>22:45</strong> Walk to "Centro" bus stop → Line 28 back to Illunbe (runs until 23:30; check for festival extensions)</li>
+            </ol>
+            <p style="margin-top:12px;color:#2e7d32;"><strong>Pro tips:</strong> Arrive by 11:20 for La Cuchara (opens 12:30). Bar Nestor tortilla at 13:00 & 19:30 sharp — arrive 30 min early. Bar Txepetxa closed Mon. La Viña closed Mon. Carry cash (many bars prefer it). Pace yourself!</p>
+        </div>
+    </div>
+
+    <footer style="text-align:center;color:#888;font-size:0.9rem;margin-top:40px;padding-top:20px;border-top:1px solid #eee;">
+        <p><a href="index.html" style="color:#0066cc;">← Back to Restaurant Guide</a> | <a href="../bilbao-guide.html" style="color:#0066cc;">Main Guide</a> | <a href="pintxos.html" style="color:#0066cc;">Bilbao Pintxos</a></p>
+    </footer>
+</body>
+</html>
