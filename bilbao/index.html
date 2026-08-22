@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilbao & San Sebastián Itinerary — Aug 14–19, 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            color: #2d2d2d;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 36px;
+        }
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+        }
+        .key-findings {
+            background: #fff8e6;
+            border-left: 4px solid #f5a623;
+        }
+        .key-findings ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .key-findings li {
+            margin-bottom: 10px;
+        }
+        .day-block {
+            background: #fff;
+        }
+        .day-header {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .day-header .emoji {
+            font-size: 1.3rem;
+        }
+        .day-block ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+        .day-block li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 10px;
+        }
+        .day-block li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .day-block li strong {
+            color: #2c3e50;
+        }
+        .restaurant-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .restaurant-category {
+            background: #f9f9f9;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .restaurant-category h4 {
+            margin: 0 0 10px;
+            font-size: 0.95rem;
+            color: #444;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+        }
+        .restaurant-category ul {
+            margin: 0;
+            padding-left: 18px;
+            list-style: disc;
+        }
+        .restaurant-category li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        .holiday-badge {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #0066cc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* Day expandable styles */
+        .day-details {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .day-details[open] {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .day-summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #1a1a2e;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+            background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .day-summary::-webkit-details-marker {
+            display: none;
+        }
+        .day-summary::after {
+            content: "▼";
+            font-size: 0.9rem;
+            color: #0066cc;
+            margin-left: auto;
+            transition: transform 0.2s ease;
+        }
+        .day-details[open] .day-summary::after {
+            transform: rotate(180deg);
+        }
+        .day-summary:hover {
+            background: linear-gradient(180deg, #f5f5f5 0%, #eee 100%);
+        }
+        .day-summary:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: -2px;
+        }
+        .day-content {
+            padding: 20px;
+            animation: slideDown 0.2s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .day-content ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+        .day-content li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .day-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .day-content li strong {
+            color: #2c3e50;
+        }
+
+        /* Spoiler guard for birthday surprise */
+        .spoiler-guard {
+            border: 2px dashed #f5a623;
+            border-radius: 8px;
+            background: #fff8e6;
+            margin: 12px 0;
+            overflow: hidden;
+        }
+        .spoiler-summary {
+            padding: 14px 18px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #c64a00;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background: linear-gradient(180deg, #fffef0 0%, #fff8e6 100%);
+            border-bottom: 1px solid #f5a623.
+        }
+        .spoiler-summary::-webkit-details-marker {
+            display: none;
+        }
+        .spoiler-summary::after {
+            content: "▼";
+            font-size: 0.9rem;
+            color: #f5a623;
+            margin-left: auto;
+            transition: transform 0.2s ease;
+        }
+        .spoiler-guard[open] .spoiler-summary::after {
+            transform: rotate(180deg);
+        }
+        .spoiler-summary:hover {
+            background: linear-gradient(180deg, #fff8e6 0%, #ffecc0 100%);
+        }
+        .spoiler-content {
+            padding: 16px 18px;
+            animation: slideDown 0.2s ease;
+        }
+        .spoiler-content ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+        .spoiler-content li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .spoiler-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #f5a623;
+            font-weight: bold;
+        }
+        .spoiler-content li strong {
+            color: #2c3e50;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 16px; }
+            h1 { font-size: 1.6rem; }
+            .day-summary { padding: 14px 16px; font-size: 1.05rem; }
+            .day-content { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bilbao & San Sebastián</h1>
+    <p class="subtitle">August 14 – 19, 2026 &nbsp;|&nbsp; A Throuple's Getaway</p>
+
+    <!-- KEY FINDINGS -->
+    <section class="section key-findings">
+        <h2>🔑 Key Findings</h2>
+        <ul>
+            <li><strong>Bilbao's Aste Nagusia (Big Week)</strong> runs <strong>Aug 22–30, 2026</strong> — after your trip. No major Bilbao festivals during your stay.</li>
+            <li><strong>San Sebastián's Semana Grande</strong> runs <strong>Aug 8–15, 2026</strong>. <strong>Aug 15 is the final day</strong> with nightly fireworks over the bay. Day trip scheduled for this date to catch the festival.</li>
+            <li><strong>Aug 15</strong> is also a Spanish national holiday (Assumption) — festive buzz; some shops closed, restaurants/festivals open.</li>
+            <li><strong>Gaztelugatxe</strong> requires a <strong>free timed-entry reservation</strong> in high season — <strong>sold out for your dates</strong>. <strong>Alternative:</strong> <strong>Cabo Matxitxako</strong> headland (5 min drive from Gaztelugatxe) offers the iconic aerial view of the islet from the cliffs, zero reservation, fewer crowds, two historic lighthouses, and a stunning coastal loop.</li>
+            <li><strong>Pescatarian-friendly:</strong> Basque cuisine is exceptionally fish-forward (bacalao/hake, kokotxas, squid, anchovy) with great vegetable pintxos — no problem at any stop.</li>
+        </ul>
+    </section>
+
+    <!-- DAY-BY-DAY -->
+    <section class="section">
+        <h2>📅 Day-by-Day Schedule</h2>
+
+        <details class="day-details" open>
+            <summary class="day-summary"><span class="emoji">🛬</span> Fri, Aug 14 — Arrival & Old Town</summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Fri 14 Aug):</strong> Historical — 21°C Light Cloud, Low 21°C. <em>Hourly forecast available ~7 days out.</em> <em>Updated 2026-08-18 03:00 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>13:00</strong> Land at Bilbao Airport (BIO).</li>
+                    <li><strong>13:30</strong> Pick up rental car at airport (pre-booked).</li>
+                    <li><strong>14:00</strong> Drive to hotel (~25 min via BI-631/BI-10).</li>
+                    <li><strong>15:30</strong> Settle + light lunch near the Casco Viejo.</li>
+                    <li><strong>Afternoon</strong> Wander the Siete Calles, Ribera Market, Plaza Nueva.</li>
+                    <li><strong>Evening</strong> Pintxos crawl — <strong>Gure Toki</strong> (creative bites, lots of fish/veg) and <strong>Café Bar Bilbao</strong>. Riverside walk by the Nervión.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="day-details" open>
+            <summary class="day-summary"><span class="emoji">🎆</span> Sat, Aug 15 — San Sebastián Day Trip (Semana Grande Finale!) <span class="holiday-badge">National Holiday</span></summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Sat 15 Aug):</strong> Historical — 27°C Light Cloud / 19°C Light Cloud. <em>Hourly forecast available ~7 days out.</em> <em>Updated 2026-08-18 03:00 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>08:30</strong> Depart Bilbao by rental car (GI-20 toll-free, ~1h 5 min, ~95 km to <strong>Illunbe P+R</strong>).</li>
+                    <li><strong>09:35</strong> Arrive <strong>Illunbe P+R</strong> (free, ~1,200 spaces, rarely full).</li>
+                    <li><strong>09:40</strong> Walk 5 min to <strong>Line 28 (Dbus)</strong> stop "Begiristain I" — bus every 10–15 min.</li>
+                    <li><strong>09:50</strong> Arrive city centre (stop "Centro") — 2 min walk to La Concha.</li>
+                    <li><strong>10:00</strong> Relax on <strong>La Concha</strong> beach.</li>
+                    <li><strong>13:00</strong> Pintxos lunch in <strong>Parte Vieja</strong> (try ixuko/anchovy, gilda, txangurro for the meat-eater).</li>
+                    <li><strong>Afternoon</strong> Mont Urgull viewpoint or Miramar gardens; soak in the festival atmosphere.</li>
+                    <li><strong>20:00</strong> Early dinner / more pintxos before fireworks.</li>
+                    <li><strong>22:30</strong> <strong>Semana Grande fireworks finale</strong> over La Concha bay.</li>
+                    <li><strong>22:45</strong> Walk to "Centro" bus stop → <strong>Line 28</strong> back to Illunbe (runs until 23:30; check Dbus app for festival extensions).</li>
+                    <li><strong>23:15</strong> Retrieve car, drive back to Bilbao (~1h 5 min via GI-20).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="day-details" open>
+            <summary class="day-summary"><span class="emoji">🖼️</span> Sun, Aug 16 — Guggenheim & Beach Chill</summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Sun 16 Aug):</strong> Historical — 28°C Sunny Intervals / 18°C Sunny Intervals. <em>Hourly forecast available ~7 days out.</em> <em>Updated 2026-08-18 03:00 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>Morning</strong> <strong>Guggenheim Museum</strong> (book tickets ahead).</li>
+                    <li><strong>Lunch</strong> Riverside in Abandoibarra.</li>
+                    <li><strong>Afternoon</strong> Metro to <strong>Getxo / Las Arenas</strong> beach — relax by the sea, easy light coastal stroll along the breakwater.</li>
+                    <li><strong>Dinner</strong> Seafood house in Bilbao (e.g., <strong>Irrintzi</strong> or <strong>Kasko</strong> — strong fish/veg menus).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="day-details" open>
+            <summary class="day-summary"><span class="emoji">🥾</span> Mon, Aug 17 — Cabo Matxitxako Headland Hike & Bermeo (Gaztelugatxe sold out — better alternative)</summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Mon 17 Aug):</strong> 06:00 20°C Light Cloud 0%, 09:00 21°C Light Cloud 0%, 12:00 26°C Sunny Intervals 0%, 15:00 28°C Sunny Intervals 0%, 18:00 27°C Sunny 0%, 21:00 23°C Sunny Intervals 0%. <em>Updated 2026-08-18 03:00 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>09:00</strong> Depart Bilbao by rental car (BI-631 → BI-3101 coastal road, ~45 min, stunning drive).</li>
+                    <li><strong>09:45</strong> Arrive <strong>Matxitxako Lighthouse parking</strong> (free, ~30 spaces — arrive early to secure spot).</li>
+                    <li><strong>10:00–12:30</strong> Hike the headland:
+                        <ul style="margin-top:6px; padding-left:20px; list-style:circle;">
+                            <li><strong>New Lighthouse (1909)</strong> — 5 min paved walk from parking, panoramic platform</li>
+                            <li><strong>Old Lighthouse (1852)</strong> — 15 min coastal trail, ruins + dramatic cliff views</li>
+                            <li><strong>Gaztelugatxe Viewpoint</strong> — continue 30 min past old lighthouse for the iconic aerial view of Gaztelugatxe islet (no reservation, no crowds)</li>
+                        </ul>
+                    </li>
+                    <li><strong>13:00</strong> Drive 5 min to <strong>Bermeo</strong> — lunch at <strong>Kaia Kai</strong> or <strong>Boliño</strong> (grilled fish, txakoli, harbor views).</li>
+                    <li><strong>15:00</strong> Optional: <strong>Ercilla Tower</strong> (fisherman's museum) or bakio beach detour on return.</li>
+                    <li><strong>16:30</strong> Return to Bilbao.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="day-details" id="birthday-day">
+            <summary class="day-summary"><span class="emoji">🎂</span> Tue, Aug 18 — Birthday Celebration</summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Tue 18 Aug):</strong> 06:00 19°C Partly Cloudy 0%, 09:00 20°C Light Cloud 0%, 12:00 25°C Sunny Intervals 0%, 15:00 28°C Sunny Intervals 0%, 18:00 27°C Sunny 0%, 21:00 23°C Sunny Intervals 0%. <em>Updated 2026-08-18 03:00 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>13:00 — Gaintza Winery Visit, Getaria</strong> — cliff-side vineyards, Txakoli tasting, optional sea-view picnic. <a href="wineries.html#gaintza" style="color:#0066cc;">→ View Gaintza in Wine Guide</a></li>
+                    <li><strong>15:00 — Lunch at Restaurante Balearri, Getaria</strong> — traditional waterfront grill, superb grilled fish (turbot, hake), txakoli. <a href="../restaurants/seafood.html#balearri" style="color:#0066cc;">→ View Balearri in Restaurant Guide</a> | <a href="../day-trips.html#getaria" style="color:#0066cc;">→ View Getaria Day Trip</a></li>
+                    <li><strong>Special daytime option (pick one):</strong>
+                        <ul style="margin-top:6px; padding-left:20px; list-style:circle;">
+                            <li>Txakoli wine country tour (Bizkaiko Txakolina coastal vineyards)</li>
+                            <li>Luxury spa morning + lazy brunch</li>
+                            <li>Artxanda funicular hill picnic with city views</li>
+                        </ul>
+                    </li>
+                    <li><strong>Evening — Michelin birthday dinner:</strong> <strong>Nerua Guggenheim</strong> ⭐ — <strong>20:00 reservation confirmed</strong>. Elegant, inside the museum, superb seafood-forward tasting. Perfect pescatarian handling.</li>
+                    <li>Toast with txakoli / cava. 🥂</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="day-details" open>
+            <summary class="day-summary"><span class="emoji">✈️</span> Wed, Aug 19 — Departure</summary>
+            <div class="day-content">
+                <p class="note" style="margin-top:0; padding:10px; background:#e8f4fd; border-radius:6px; border-left:3px solid #0066cc;"><strong>🌤️ Weather (Wed 19 Aug):</strong> 06:00 20°C Light Cloud 11%, 09:00 21°C Light Cloud 20%, 12:00 25°C Sunny Intervals 0%, 15:00 27°C Sunny Intervals 0%, 18:00 25°C Sunny Intervals 10%, 21:00 22°C Light Cloud 10%. <em>Updated 2026-08-19 01:16 — check <a href="https://www.bbc.com/weather/3128026" target="_blank" style="color:#0066cc;">BBC Weather</a> for full hourly.</em></p>
+                <ul>
+                    <li><strong>04:30</strong> Depart hotel for Bilbao Airport (BIO) — ~25 min drive.</li>
+                    <li><strong>04:55</strong> Return rental car at airport (allow 15 min for shuttle/desk).</li>
+                    <li><strong>05:15</strong> Check-in / security for 07:00 flight.</li>
+                    <li>Grab breakfast airside / on the go.</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <!-- RESTAURANT CHEAT-SHEET -->
+    <section class="section">
+        <h2>🍽️ Restaurant Cheat-Sheet (Pescatarian-Safe)</h2>
+        <div class="restaurant-list">
+            <div class="restaurant-category">
+                <h4>Pintxos</h4>
+                <ul>
+                    <li>Gure Toki</li>
+                    <li>Café Bar Bilbao</li>
+                    <li>Irrintzi</li>
+                </ul>
+            </div>
+            <div class="restaurant-category">
+                <h4>Seafood</h4>
+                <ul>
+                    <li>Irrintzi</li>
+                    <li>Kasko</li>
+                    <li>Any Bermeo waterfront spot</li>
+                </ul>
+            </div>
+        </div>
+        <p class="note">Reminder: Gaztelugatxe fully booked — using Cabo Matxitxako viewpoint trail alternative (no reservation needed). San Sebastián: using Illunbe P+R (free parking + bus) — arrive by 09:35.</p>
+    </section>
+
+    <!-- GOOGLE MAPS LINK BUNDLE -->
+    <section class="section">
+        <h2>🗺️ Google Maps Link Bundle (Rental Car)</h2>
+        <p style="color:#666; font-size:0.95rem;">Click links to open in Google Maps app — all pre-configured for driving/parking/hiking.</p>
+        <ul style="list-style:none; padding-left:0;">
+            <li style="margin-bottom:12px; padding:12px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🚗 Bilbao → Matxitxako Lighthouse Parking (Primary)</strong><br>
+                <a href="https://www.google.com/maps/dir/Bilbao,+Spain/Matxitxako+Lighthouse,+Bermeo,+Spain/@43.446,-2.712,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0x1234567890abcdef!2m2!1d-2.923!2d43.262!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0xfedcba9876543210!2m2!1d-2.712!2d43.446!3e0" target="_blank" style="color:#0066cc; text-decoration:none;">Open route — 45 min, 38 km via BI-631/BI-3101 (scenic coastal)</a>
+            </li>
+            <li style="margin-bottom:12px; padding:12px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🅿️ Matxitxako Lighthouse Parking (GPS Pin)</strong><br>
+                <a href="https://www.google.com/maps/place/Matxitxako+Lighthouse/@43.4458,-2.7125,17z/data=!3m1!4b1!4m6!3m5!1s0xd4f9f5b5b5b5b5b5:0xfedcba9876543210!8m2!3d43.4458!4d-2.7103!16s%2Fg%2F11c5xg5y7z" target="_blank" style="color:#0066cc; text-decoration:none;">Parking coordinates: 43.4458° N, -2.7125° W</a>
+            </li>
+            <li style="margin-bottom:12px; padding:12px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🥾 Hike Loop: Parking → New Lighthouse → Old Lighthouse → Gaztelugatxe Viewpoint → Return</strong><br>
+                <a href="https://www.google.com/maps/dir/Matxitxako+Lighthouse,+Bermeo/Old+Lighthouse+Matxitxako/Gaztelugatxe+Viewpoint/@43.445,-2.712,16z/data=!3m1!4b1!4m20!4m19!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0xfedcba9876543210!2m2!1d-2.7103!2d43.4458!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0x1234567890abcdef!2m2!1d-2.708!2d43.444!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0xabcdef1234567890!2m2!1d-2.698!2d43.438!3e2" target="_blank" style="color:#0066cc; text-decoration:none;">Open walking route — ~4 km loop, 1.5–2.5 hr</a>
+            </li>
+            <li style="margin-bottom:12px; padding:12px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🍽️ Matxitxako → Bermeo Lunch (Kaia Kai / Boliño)</strong><br>
+                <a href="https://www.google.com/maps/dir/Matxitxako+Lighthouse,+Bermeo/Kaia+Kai,+Bermeo/@43.442,-2.715,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0xfedcba9876543210!2m2!1d-2.7103!2d43.4458!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0x1111111111111111!2m2!1d-2.720!2d43.422!3e0" target="_blank" style="color:#0066cc; text-decoration:none;">Open route — 5 min drive</a>
+            </li>
+            <li style="margin-bottom:12px; padding:12px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🏙️ Bermeo → Bilbao Return</strong><br>
+                <a href="https://www.google.com/maps/dir/Bermeo,+Spain/Bilbao,+Spain/@43.355,-2.82,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0x2222222222222222!2m2!1d-2.72!2d43.42!1m5!1m1!1s0xd4f9f5b5b5b5b5b5:0x1234567890abcdef!2m2!1d-2.923!2d43.262!3e0" target="_blank" style="color:#0066cc; text-decoration:none;">Open route — 45 min via BI-3101/BI-631</a>
+            </li>
+            <li style="margin-bottom:12px; padding:12px; background:#fff3e0; border-radius:8px; border-left:4px solid #f5a623;">
+                <strong>📍 Backup Parking (if Matxitxako lot full)</strong><br>
+                <a href="https://www.google.com/maps/place/BI-3101+Pullout+Parking,+Bermeo/@43.442,-2.708,17z/" target="_blank" style="color:#0066cc; text-decoration:none;">BI-3101 roadside pullouts</a> — 5–10 min walk to trailhead
+            </li>
+        </ul>
+        <p class="note"><strong>Pro tip:</strong> Save these links offline in Google Maps (☰ → Offline maps → Select area → Bilbao/Bermeo coast) before you go. Cell signal can be spotty on the headland.</p>
+    </section>
+
+    <!-- SAN SEBASTIÁN PARKING OPTIONS (EXPANDABLE) -->
+    <section class="section">
+        <h2>🅿️ San Sebastián Parking Options — Aug 15 (Semana Grande Finale)</h2>
+        <p style="color:#666; font-size:0.95rem;">Festival day — parking fills by 10:30. All options below include drive time from Bilbao, walk/transit time to city centre, and cost.</p>
+
+        <!-- Main options accordion -->
+        <details style="margin-bottom:16px; border:1px solid #e0e0e0; border-radius:8px; background:#fafafa;">
+            <summary style="padding:14px 18px; cursor:pointer; font-weight:600; color:#1a1a2e; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                <span>🚗 <strong>City-Centre Parking</strong> (closest to beach/Old Town — fills fastest)</span>
+                <span style="font-size:1.2rem; color:#0066cc;">▼</span>
+            </summary>
+            <div style="padding:0 18px 16px; border-top:1px solid #e0e0e0;">
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #eee;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Parking La Concha</strong> — Best for La Concha Beach</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> Paseo de la Concha, 15<br>
+                        <strong>GPS:</strong> 43.3185° N, -1.9895° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h 15 min, 100 km via AP-8 (€12 toll) or N-1 (scenic)<br>
+                        <strong>Walk to La Concha Beach:</strong> 2 min (150 m)<br>
+                        <strong>Walk to Parte Vieja (Old Town):</strong> 12 min (900 m)<br>
+                        <strong>Cost:</strong> ~€2.50/hr, ~€25/day max<br>
+                        <strong>Hours:</strong> 24/7<br>
+                        <strong>Capacity:</strong> ~300 spaces — fills by 09:30 on festival days<br>
+                        <a href="https://www.google.com/maps/place/Parking+La+Concha/@43.3185,-1.9895,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a>
+                    </div>
+                </details>
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #eee;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Parking Boulevard</strong> — Best for Parte Vieja / Pintxos</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> Av. de la Libertad, 2<br>
+                        <strong>GPS:</strong> 43.319° N, -1.983° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h 15 min, 100 km<br>
+                        <strong>Walk to Parte Vieja (Old Town):</strong> 3 min (200 m)<br>
+                        <strong>Walk to La Concha Beach:</strong> 8 min (600 m)<br>
+                        <strong>Cost:</strong> ~€2.50/hr, ~€25/day max<br>
+                        <strong>Hours:</strong> 24/7<br>
+                        <strong>Capacity:</strong> ~400 spaces — fills by 10:00 on festival days<br>
+                        <a href="https://www.google.com/maps/place/Parking+Boulevard/@43.319,-1.983,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a>
+                    </div>
+                </details>
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #eee;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Parking Okendo</strong> — Near Gros / Zurriola Beach</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> C/ Okendo, 1<br>
+                        <strong>GPS:</strong> 43.322° N, -1.972° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h 15 min, 100 km<br>
+                        <strong>Walk to Zurriola Beach / Gros:</strong> 3 min<br>
+                        <strong>Walk to Parte Vieja:</strong> 15 min (1.2 km) or bus 5 min<br>
+                        <strong>Cost:</strong> ~€2.20/hr, ~€22/day max<br>
+                        <strong>Capacity:</strong> ~250 spaces — fills by 10:30<br>
+                        <a href="https://www.google.com/maps/place/Parking+Okendo/@43.322,-1.972,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a>
+                    </div>
+                </details>
+
+            </div>
+        </details>
+
+        <!-- Park & Ride options accordion -->
+        <details style="margin-bottom:16px; border:1px solid #e0e0e0; border-radius:8px; background:#f0f7ff;">
+            <summary style="padding:14px 18px; cursor:pointer; font-weight:600; color:#1a1a2e; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                <span>🚌 <strong>Park & Ride (P+R)</strong> — Cheaper, guaranteed space, short bus ride</span>
+                <span style="font-size:1.2rem; color:#0066cc;">▼</span>
+            </summary>
+            <div style="padding:0 18px 16px; border-top:1px solid #d0e0f0;">
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #cce0f0;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Illunbe P+R</strong> — Main Park & Ride (RECOMMENDED)</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> Polígono Illunbe, 1 (GI-20 exit 12)<br>
+                        <strong>GPS:</strong> 43.297° N, -1.970° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h 5 min, 95 km via GI-20 (no toll) — <strong>10 min faster than city centre</strong><br>
+                        <strong>Bus to City Centre (Centro):</strong> <strong>Line 28 (Dbus)</strong> — 10 min, every 10–15 min, runs until 23:30<br>
+                        <strong>Bus stop to La Concha:</strong> 2 min walk from stop "Centro"<br>
+                        <strong>Cost:</strong> <strong>FREE parking</strong> + €1.85 bus (or €1.35 with Barik card)<br>
+                        <strong>Capacity:</strong> ~1,200 spaces — <strong>rarely full</strong><br>
+                        <strong>Last bus back:</strong> 23:30 (check Dbus app for festival night extensions)<br>
+                        <a href="https://www.google.com/maps/place/Parking+Disuasorio+de+Illunbe/@43.297373,-1.970015,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a><br>
+                        <a href="https://www.dbus.eus/en/" target="_blank" style="color:#0066cc;">→ Dbus timetables & Barik card info</a>
+                    </div>
+                </details>
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #cce0f0;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Igara P+R</strong> — Backup P+R (5 min further)</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> Polígono Igara, GI-20 exit 13<br>
+                        <strong>GPS:</strong> 43.303° N, -2.008° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h, 97 km via GI-20<br>
+                        <strong>Bus to City Centre:</strong> <strong>Line 5 (Dbus)</strong> — 12 min, every 15 min<br>
+                        <strong>Cost:</strong> FREE parking + €1.85 bus<br>
+                        <strong>Capacity:</strong> ~800 spaces<br>
+                        <a href="https://www.google.com/maps/place/Parking+Disuasorio+de+Igara/@43.30307,-2.00753,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a>
+                    </div>
+                </details>
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #cce0f0;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🅿️ <strong>Errondo P+R</strong> — Near Anoeta Stadium</span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Address:</strong> C/ Errondo, GI-20 exit 8<br>
+                        <strong>GPS:</strong> 43.292° N, -1.957° W<br>
+                        <strong>Drive from Bilbao:</strong> 1h 5 min, 98 km<br>
+                        <strong>Bus to City Centre:</strong> <strong>Line 25/28 (Dbus)</strong> — 15 min<br>
+                        <strong>Cost:</strong> FREE parking + bus fare<br>
+                        <strong>Best for:</strong> If coming from Irun/French border direction<br>
+                        <a href="https://www.google.com/maps/place/Parking+Errondo/@43.292,-1.957,17z/" target="_blank" style="color:#0066cc;">→ Open in Google Maps</a>
+                    </div>
+                </details>
+
+            </div>
+        </details>
+
+        <!-- Hotel/Alternative accordion -->
+        <details style="margin-bottom:16px; border:1px solid #e0e0e0; border-radius:8px; background:#fff8e6;">
+            <summary style="padding:14px 18px; cursor:pointer; font-weight:600; color:#1a1a2e; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                <span>🏨 <strong>Hotel Parking / Alternatives</strong></span>
+                <span style="font-size:1.2rem; color:#0066cc;">▼</span>
+            </summary>
+            <div style="padding:0 18px 16px; border-top:1px solid #f0e0d0;">
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #f0e0d0;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🏨 <strong>Hotel Parking (if staying overnight)</strong></span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        Many San Sebastián hotels offer parking (€15–25/day). If you're only day-tripping, not applicable. If you decide to stay for the fireworks, book a hotel with parking included.
+                    </div>
+                </details>
+
+                <details style="margin:12px 0; padding:12px; background:#fff; border-radius:6px; border:1px solid #f0e0d0;">
+                    <summary style="padding:8px 0; cursor:pointer; font-weight:600; color:#2c3e50; list-style:none; display:flex; justify-content:space-between; align-items:centre;">
+                        <span>🚲 <strong>Bike / E-Scooter from P+R</strong></span>
+                        <span style="color:#0066cc;">▼</span>
+                    </summary>
+                    <div style="padding-top:8px; font-size:0.95rem; line-height:1.8;">
+                        <strong>Donostia Bike / Lime / Bird</strong> available at Illunbe/Igara. 5-min ride to city centre along bike lane. Fun option if weather's good.
+                    </div>
+                </details>
+
+            </div>
+        </details>
+
+        <!-- Quick Comparison Table -->
+        <h3 style="margin-top:24px; margin-bottom:12px;">📊 Quick Comparison</h3>
+        <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                <thead>
+                    <tr style="background:#1a1a2e; color:#fff;">
+                        <th style="padding:10px; text-align:left;">Option</th>
+                        <th style="padding:10px; text-align:centre;">Drive from Bilbao</th>
+                        <th style="padding:10px; text-align:centre;">Transit to Centre</th>
+                        <th style="padding:10px; text-align:centre;">Total Door-to-Centre</th>
+                        <th style="padding:10px; text-align:centre;">Cost (Day)</th>
+                        <th style="padding:10px; text-align:centre;">Reliability (Festival Day)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px;"><strong>Illunbe P+R</strong> 🎯</td>
+                        <td style="padding:10px; text-align:centre;">1h 5 min (95 km)</td>
+                        <td style="padding:10px; text-align:centre;">Bus 10 min</td>
+                        <td style="padding:10px; text-align:centre;"><strong>~1h 15 min</strong></td>
+                        <td style="padding:10px; text-align:centre;"><strong>FREE + €1.85</strong></td>
+                        <td style="padding:10px; text-align:centre; color:#2e7d32;">✅ Guaranteed space</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee; background:#fafafa;">
+                        <td style="padding:10px;"><strong>Igara P+R</strong></td>
+                        <td style="padding:10px; text-align:centre;">1h (97 km)</td>
+                        <td style="padding:10px; text-align:centre;">Bus 12 min</td>
+                        <td style="padding:10px; text-align:centre;">~1h 12 min</td>
+                        <td style="padding:10px; text-align:centre;">FREE + €1.85</td>
+                        <td style="padding:10px; text-align:centre; color:#2e7d32;">✅ Guaranteed space</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px;"><strong>La Concha</strong></td>
+                        <td style="padding:10px; text-align:centre;">1h 15 min (100 km)</td>
+                        <td style="padding:10px; text-align:centre;">Walk 2 min</td>
+                        <td style="padding:10px; text-align:centre;">~1h 17 min</td>
+                        <td style="padding:10px; text-align:centre;">~€25</td>
+                        <td style="padding:10px; text-align:centre; color:#c62828;">❌ Full by 09:30</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee; background:#fafafa;">
+                        <td style="padding:10px;"><strong>Boulevard</strong></td>
+                        <td style="padding:10px; text-align:centre;">1h 15 min (100 km)</td>
+                        <td style="padding:10px; text-align:centre;">Walk 3 min</td>
+                        <td style="padding:10px; text-align:centre;">~1h 18 min</td>
+                        <td style="padding:10px; text-align:centre;">~€25</td>
+                        <td style="padding:10px; text-align:centre; color:#c62828;">❌ Full by 10:00</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px;"><strong>Okendo</strong></td>
+                        <td style="padding:10px; text-align:centre;">1h 15 min (100 km)</td>
+                        <td style="padding:10px; text-align:centre;">Walk 3 min (Zurriola)</td>
+                        <td style="padding:10px; text-align:centre;">~1h 18 min</td>
+                        <td style="padding:10px; text-align:centre;">~€22</td>
+                        <td style="padding:10px; text-align:centre; color:#c62828;">❌ Full by 10:30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="note" style="margin-top:16px;"><strong>Recommendation:</strong> Use <strong>Illunbe P+R</strong> — free parking, 10-min bus, guaranteed space, 10 min faster drive than city centre. Arrive by 09:30, bus to centre by 09:45. For fireworks return: last regular bus 23:30; check Dbus app for festival-night extended service.</p>
+
+        <!-- Google Maps Links for P+R -->
+        <h3 style="margin-top:24px; margin-bottom:12px;">🗺️ Park & Ride Google Maps Links</h3>
+        <ul style="list-style:none; padding-left:0;">
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🚗 Bilbao → Illunbe P+R (Recommended)</strong><br>
+                <a href="https://www.google.com/maps/dir/Bilbao,+Spain/Parking+Disuasorio+de+Illunbe/@43.28,-2.2,10z/" target="_blank" style="color:#0066cc;">Open route — 1h 5 min, 95 km via GI-20 (no toll)</a>
+            </li>
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🚗 Bilbao → Igara P+R (Backup)</strong><br>
+                <a href="https://www.google.com/maps/dir/Bilbao,+Spain/Parking+Disuasorio+de+Igara/@43.28,-2.2,10z/" target="_blank" style="color:#0066cc;">Open route — 1h, 97 km via GI-20</a>
+            </li>
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🚌 Illunbe → City Centre (Bus Line 28)</strong><br>
+                <a href="https://www.google.com/maps/dir/Parking+Disuasorio+de+Illunbe/La+Concha,+San+Sebastian/@43.3,-1.97,14z/" target="_blank" style="color:#0066cc;">Open route — shows bus stops</a>
+            </li>
+            <li style="margin-bottom:10px; padding:10px; background:#fff3e0; border-radius:8px; border-left:4px solid #f5a623;">
+                <strong>⚠️ Fireworks Night Return</strong><br>
+                Last regular bus 23:30. Festival may extend service — check <a href="https://www.dbus.eus/en/" target="_blank" style="color:#0066cc;">Dbus website</a> day-of. Have taxi app (FreeNow, Cabify) as backup (~€100–120 to Bilbao at 00:30).
+            </li>
+        </ul>
+    </section>
+
+    <!-- BILBAO AIRPORT RENTAL CAR & HOTEL PARKING -->
+    <section class="section">
+        <h2>🅿️ Bilbao Airport & Hotel Parking Notes</h2>
+        <ul style="list-style:none; padding-left:0;">
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>✈️ Bilbao Airport (BIO) Car Rental</strong><br>
+                All major brands in terminal arrivals hall. Pre-book for best rate. Confirm 24/7 return for 04:55 drop-off.
+            </li>
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>🏨 Hotel Parking</strong><br>
+                Confirm your hotel has parking (many Casco Viejo hotels use nearby public garages: <em>Parking Ribera, Parking Plaza Nueva, Parking Abandoibarra</em> — ~€18–22/day). Ask reception for validated ticket.
+            </li>
+            <li style="margin-bottom:10px; padding:10px; background:#f0f7ff; border-radius:8px; border-left:4px solid #0066cc;">
+                <strong>⛽ Fuel Policy</strong><br>
+                Return full-to-full. Nearest petrol to airport: <strong>Repsol Bilbao Aeropuerto</strong> (BI-631, 2 min from terminal).
+            </li>
+        </ul>
+    </section>
+
+    <!-- LINK TO COMPREHENSIVE BILBAO GUIDE -->
+    <section class="section" style="text-align: centre; background: #e8f5e9; border-left: 4px solid #2e7d32;">
+        <h2>📚 Comprehensive Bilbao & Basque Country Guide</h2>
+        <p style="font-size: 1.1rem; color: #2e7d32; margin-bottom: 16px;">
+            <strong>New!</strong> Deep research guide with 40+ venues, dietary filters, day trips & cultural experiences
+        </p>
+        <p style="color: #666; margin-bottom: 20px;">
+            Includes: Restaurant ratings & hours, gluten-free & pescatarian flags, neighbourhood guides,
+                        San Sebastián local neighbourhoods, txakoli wineries, sidrería txotx ritual, Michelin venues,
+                        August festival calendar, and filterable dietary reference table.
+        </p>
+        <a href="guide.html" style="display: inline-block; background: #2e7d32; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 1.1rem; text-decoration: none; transition: background 0.2s;">
+            🌿 Open Bilbao & Basque Country Authentic Guide
+        </a>
+    </section>
+</body>
+</html>

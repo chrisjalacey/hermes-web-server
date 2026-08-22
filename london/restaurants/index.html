@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Restaurant Guide — Gluten-Free & Dietary Focused</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #2d2d2d; max-width: 1000px; margin: 0 auto; padding: 40px 24px; background: #fafafa; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; text-align: center; border-bottom: 3px solid #0066cc; padding-bottom: 12px; }
+        .subtitle { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-top: 48px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #333; margin-top: 32px; margin-bottom: 12px; }
+        .section { background: #fff; border-radius: 12px; padding: 28px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600; margin-right: 6px; margin-bottom: 4px; }
+        .badge-gf-safe { background: #c8e6c9; color: #1b5e20; border: 1px solid #a5d6a7; }
+        .badge-gf { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .badge-pescatarian { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+        .badge-local { background: #f3e5f5; color: #7b1fa2; border: 1px solid #e1bee7; }
+        .badge-tourist { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
+        .badge-michelin { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+        .nav-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 24px; text-decoration: none; color: inherit; border-left: 4px solid #0066cc; transition: all 0.2s; }
+        .nav-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); border-left-color: #0052a3; }
+        .nav-card h3 { margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #1a1a2e; }
+        .nav-card p { color: #666; margin: 0; font-size: 0.95rem; }
+        .nav-card .meta { margin-top: 12px; font-size: 0.85rem; color: #888; }
+        .nav-card .count { background: #e3f2fd; color: #1565c0; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: #0066cc; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 600px) { body { padding: 20px 16px; } h1 { font-size: 1.7rem; } }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Main Index</a>
+    <h1>🍽️ London Restaurant Guide</h1>
+    <p class="subtitle">Dietary-focused guides for central London — gluten-free, Coeliac UK accredited, and allergen-aware venues</p>
+
+    <div class="nav-grid">
+        <a href="restaurants/london-gf.html" class="nav-card">
+            <h3>🌿 Central London Gluten-Free Restaurants</h3>
+            <p>Deep research via NotebookLM (124 sources) — dedicated GF, Coeliac UK accredited & gluten-friendly venues in Soho, Bank/Financial District, Borough, Covent Garden & more.</p>
+            <div class="meta"><span class="count">15+ venues</span> • <span class="count">Soho, Bank, Borough, Waterloo, Shoreditch</span></div>
+        </a>
+
+        <a href="restaurants/london-pescatarian.html" class="nav-card">
+            <h3>🐟 Pescatarian-Friendly London (Coming Soon)</h3>
+            <p>Best fish & seafood restaurants in central London with strong pescatarian menus — from Michelin-starred to casual.</p>
+            <div class="meta"><span class="count">Planned</span> • <span class="count">Soho, Mayfair, Borough</span></div>
+        </a>
+
+        <a href="restaurants/london-vegan.html" class="nav-card">
+            <h3>🌱 Vegan & Plant-Based London (Coming Soon)</h3>
+            <p>100% vegan restaurants and venues with exceptional plant-based menus in central London.</p>
+            <div class="meta"><span class="count">Planned</span> • <span class="count">Soho, Shoreditch, Camden</span></div>
+        </a>
+    </div>
+
+    <div class="section" style="margin-top: 40px;">
+        <h2>🏷️ Dietary Badge Quick Reference</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <span class="badge badge-gf-safe">100% Dedicated GF — Celiac safe, separate kitchen/fryer, Coeliac UK accredited</span>
+            <span class="badge badge-gf">GF Friendly — Marked GF menu, staff knowledgeable, low cross-contamination</span>
+            <span class="badge badge-gf">GF Aware — Natural GF options, ask about fryer/sauces</span>
+            <span class="badge badge-gf">Limited GF — Few options, higher cross-contamination risk</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓ — Good fish/veg options</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓✓ — Excellent variety</span>
+            <span class="badge badge-pescatarian">Pescatarian ✓✓✓ — Specialist/fully suitable</span>
+        </div>
+        <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px;">
+            <span class="badge badge-local">Local Favourite</span>
+            <span class="badge badge-tourist">Popular/Touristy</span>
+            <span class="badge badge-michelin">Michelin Star</span>
+            <span class="badge badge-michelin">Michelin Guide Selection</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Related Guides</h2>
+        <p><a href="../../bilbao/guide.html" style="color: #0066cc;">→ Bilbao & Basque Country Guide</a> (itinerary, restaurants, wineries, day trips)</p>
+        <p><a href="../index.html" style="color: #0066cc;">→ Main Web Server Index</a></p>
+    </div>
+
+    <footer style="text-align: centre; color: #888; font-size: 0.9rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+        <p>Part of the Personal Travel & Restaurant Guides Collection</p>
+    </footer>
+</body>
+</html>
